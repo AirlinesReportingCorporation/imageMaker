@@ -27,6 +27,7 @@
     "numeral": "^2.0.6",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^6.0.7",
+    "simplebar": "^4.0.0-alpha.3",
     "style-loader": "^0.19.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "vue": "^2.6.10",

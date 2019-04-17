@@ -1,3 +1,4 @@
+
 /* latin */
 @font-face {
   font-family: 'Source Sans Pro';
@@ -21,6 +22,30 @@
   font-weight: 900;
   src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url("https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdu.woff2") format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.supernav {
+  display: none !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .data-panel {
@@ -56,9 +81,28 @@
 
   .imageMenu {
     background: #2b2e33;
-    padding: 60px 30px;
-    height: 800px;
+    padding: 30px 30px 60px 30px;
+    min-height: 800px;
+    height: 100vh;
     overflow-y: scroll;
+
+    .imageMenuLogo {
+      text-align: center;
+      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+        max-width: 100px;
+      }
+    }
+
+    .toggleAdvanced {
+      display: block;
+      font-family: SourceSansPro-Regular, arial, sans-serif;
+      font-size: .85rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
     label {
       color: #ffffff;
