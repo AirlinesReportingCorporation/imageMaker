@@ -633,7 +633,7 @@
                   <div class="col-12">
                     <label for="">Template Type</label>
                     <div class="selectWrapper">
-                      <select v-on:change="setCurrentTemplate($event)" class="" name="" placeholder="Please Select" >
+                      <select v-on:change="setCurrentTemplate($event)" class="" name="" placeholder="Please Select">
                         <option v-for="template in templates" v-bind:value="template.name">{{template.name}}</option>
                       </select>
                     </div>
@@ -641,18 +641,39 @@
                     <label for="">Background Image</label>
                     <div class="selectWrapper">
                       <select v-model="background" class="" name="" placeholder="">
-                        <option value="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80">Airplane Wing</option>
-                        <option value="https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Airplane Cabin</option>
-                        <option value="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Two Developers (Man and Woman)</option>
-                        <option value="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">Two Women on Laptop</option>
-                        <option value="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Team Coworkers</option>
-                        <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel14.jpg">Overhead Topography</option>
-                        <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel16.jpg">Mobile Phone</option>
-                        <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg">Data Grid</option>
-                        <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel12.jpg">Man Drawing on Computer</option>
-                        <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg">Girl with Credit Card</option>
-                        <option value="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Airport Tarmac</option>
-                        <option value="https://images.unsplash.com/photo-1454496406107-dc34337da8d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80">Passport</option>
+                        <optgroup label="ARC">
+                          <option value="https://www2.arccorp.com/globalassets/about-us/careers/carrers-jumbo2.jpg">ARC People 1</option>
+                          <option value="https://www2.arccorp.com/globalassets/about-us/careers/jumbotronstandardculture.jpg">ARC People 2</option>
+                        </optgroup>
+                        <optgroup label="Stock People">
+                          <option value="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Two Developers (Man and Woman)</option>
+                          <option value="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">Two Women on Laptop</option>
+                          <option value="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Team Meeting w/ Sticky Notes</option>
+                          <option value="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Team Coworkers</option>
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel12.jpg">Man Drawing on Computer</option>
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg">Girl with Credit Card</option>
+                        </optgroup>
+
+                        <optgroup label="Airplanes">
+                          <option value="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80">Airplane Wing</option>
+                          <option value="https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Airplane Cabin</option>
+                          <option value="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Airport Tarmac</option>
+                          <option value="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">Man at Airport</option>
+                        </optgroup>
+
+                        <optgroup label="Data">
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg">Data Grid</option>
+                          <option value="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80">Overhead North America</option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/odss/jumbotronstandard_1400x483_odss.jpg">Data points connected</option>
+                        </optgroup>
+
+                        <optgroup label="Misc">
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel14.jpg">Overhead Topography</option>
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel16.jpg">Mobile Phone</option>
+                          <option value="https://images.unsplash.com/photo-1454496406107-dc34337da8d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80">Passport</option>
+                        </optgroup>
+
+
                       </select>
                     </div>
 
