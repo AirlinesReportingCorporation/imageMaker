@@ -26,6 +26,9 @@ var data = {
       position: 'middleCenter',
       height: "650px",
       width: "1250px",
+      logoSize: "small",
+      logoColor: "white",
+      logoPosition: "topRight",
       text: [{
           copy: 'We\'re Hiring!',
           class: 'Source Sans Pro Black',
@@ -58,6 +61,12 @@ var data = {
       position: 'bottomLeft',
       height: "650px",
       width: "1250px",
+      logoSize: "small",
+      logoColor: "teal",
+      logoPosition: "topRight",
+      logoSize: "small",
+      logoColor: "teal",
+      logoPosition: "topRight",
       text: [{
           copy: 'We\'re Hiring!',
           class: 'Source Sans Pro Black',
@@ -90,6 +99,9 @@ var data = {
       position: 'middleCenter',
       height: "650px",
       width: "1250px",
+      logoSize: "small",
+      logoColor: "white",
+      logoPosition: "bottomRight",
       text: [{
           copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
           class: 'Source Sans Pro Black',
@@ -122,17 +134,20 @@ var data = {
       position: 'centerLeft',
       height: "650px",
       width: "1250px",
+      logoSize: "small",
+      logoColor: "white",
+      logoPosition: "topLeft",
       text: [{
-          copy: 'ARC Reporting Tool Saves Great GetAways Travel Time and Resources',
+          copy: 'Case Study',
           class: 'Source Sans Pro Black',
-          color: '#ffffff',
-          size: '60px'
+          color: '#96BE3C',
+          size: '36px'
         },
         {
-          copy: '',
+          copy: 'ARC Reporting Tool Saves Great GetAways Travel Time and Resources',
           class: 'Source Sans Pro Light',
           color: '#ffffff',
-          size: '72px'
+          size: '60px'
         },
         {
           copy: '',
@@ -154,6 +169,10 @@ var data = {
   height: "650px",
   width: "1250px",
   viewAdvanced: false,
+  logo: true,
+  logoSize: "small",
+  logoColor: "white",
+  logoPosition: "topRight",
   text: [{
       copy: 'We\'re Hiring!',
       class: 'Source Sans Pro Black',
@@ -222,6 +241,9 @@ var app = new Vue({
           this.position = this.templates[i].position;
           this.height = this.templates[i].height;
           this.width = this.templates[i].width;
+          this.logoColor = this.templates[i].logoColor;
+          this.logoSize = this.templates[i].logoSize;
+          this.logoPosition = this.templates[i].logoPosition;
 
           for(var j = 0; j < this.templates[i].text.length; j++) {
             this.text[j].copy = this.templates[i].text[j].copy;

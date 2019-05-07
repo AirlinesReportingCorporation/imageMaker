@@ -618,6 +618,7 @@
   <section class="data-panel data-panel--white" data-fullscreenimageblock="true" data-section="data-panel">
     <div class="background">
 
+      <!-- Image Maker Start -->
       <div v-cloak class="imageMaker">
         <div class="row no-gutters">
           <div class="col-md-3">
@@ -677,12 +678,44 @@
                       </select>
                     </div>
 
-                    <label for="">Color Theme</label>
-                    <div class="selectWrapper">
-                      <select class="" name="">
-                        <option value=""></option>
-                      </select>
+                    <div class="row no-gutters">
+                      <div class="col-4">
+                        <label for="">Logo color</label>
+                        <div class="selectWrapper">
+                          <select v-model="logoColor" class="" name="">
+                            <option value="teal">teal</option>
+                            <option value="white">white</option>
+                            <option value="black">black</option>
+                            <option value="gray">gray</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <label for="">Logo Size</label>
+                        <div class="selectWrapper">
+                          <select v-model="logoSize" class="" name="">
+                            <option value="x-small">x-small</option>
+                            <option value="small">small</option>
+                            <option value="medium">medium</option>
+                            <option value="large">large</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <label for="">Logo Position</label>
+                        <div class="selectWrapper">
+                          <select v-model="logoPosition" class="" name="">
+                            <option value="logoHide">Hide</option>
+                            <option value="topRight">Top Right</option>
+                            <option value="topLeft">Top Left</option>
+                            <option value="bottomRight">Bottom Right</option>
+                            <option value="bottomLeft">Bottom Left</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
+
+
                   </div>
                 </div>
 
@@ -875,12 +908,14 @@
                   </div>
                 </div>
 
+                <div v-bind:class="'arcLogo ' + logoColor + ' ' + logoPosition + ' ' + logoSize"></div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      <!-- Image Maker End -->
 
     </div>
     <div class="data-panel__inside">
