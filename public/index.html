@@ -842,6 +842,36 @@
                     </div>
                   </div>
 
+                  <div class="row no-gutters">
+                    <div class="col-md-6">
+                      <label for="">Icon</label>
+                      <div class="selectWrapper">
+                        <select v-model="imageIcon" class="" name="">
+                          <option value="">None</option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/aria/matrix_231x170_aria_4.png">Calendar</option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_3.png">Reliable Delivery</option>
+                          <option value="https://www2.arccorp.com/globalassets/support--training/fraud-prevention/fraudprevention_matrix4_231x170.png">Computer w/ Checkmark</option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/travel-agencies/become-an-arc-agent/ticket-icon-231x170.png">Ticket</option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_2.png"><Custom>File</Custom></option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_4.png">Global</option>
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/securityicon.png">Secure</option>
+                          <option value="https://www2.arccorp.com/globalassets/homepage/redesign/automated.png">Automation</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="">Text Align</label>
+                      <div class="selectWrapper">
+                        <select v-model="textAlign" class="" name="">
+
+                          <option value="left">Left</option>
+                          <option value="center">Center</option>
+                          <option value="right">Right</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -894,12 +924,12 @@
 
           </div>
           <div class="col-md-9">
-            <div class="imageContainer">
+            <div class="imageContainer" v-bind:style="{ textAlign: textAlign }">
               <div id="myImage" v-bind:class="currentTemplate + ' imagePost'" v-bind:style="{ 'background': backgroundFormat, 'width': width, 'height': height }">
 
                 <div class="textBox" v-bind:class="position" v-bind:style="[fullscreen()]">
                   <div v-bind:class="'imageContent '" v-bind:style="[{'background' : rgba, 'width': textboxWidth, borderFormat}, borderFormat, {'max-width': width, 'max-height': height}]">
-                    <div class="content_bg"></div>
+                    <div class="imageIcon"><img v-bind:src="imageIcon"></div>
                     <div class="imageContentInner">
                       <div v-for="textItem in text" v-bind:style="{'color' : textItem.color, 'font-size': textItem.size, 'font-family': textItem.class}" v-html="textItem.copy">
                       </div>

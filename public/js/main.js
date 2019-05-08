@@ -15,7 +15,7 @@ var data = {
     index: 0
   },
   templates: [{
-      name: "Job Posting - Full Screen",
+      name: "Job Posting [Full Screen]",
       background: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
@@ -50,7 +50,7 @@ var data = {
       ]
     },
     {
-      name: "Job Posting - Bottom",
+      name: "Job Posting [Bottom Box]",
       background: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
       textboxColor: '#189bb0',
       textBoxOpacity: '0.8',
@@ -88,7 +88,7 @@ var data = {
       ]
     },
     {
-      name: "Social - Full Screen",
+      name: "Social [Full Screen]",
       background: 'https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
@@ -123,7 +123,44 @@ var data = {
       ]
     },
     {
-      name: "Social - Left Border Box",
+      name: "Social [Full Screen, Top Icon]",
+      background: 'https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      textboxColor: '#0C1C47',
+      textBoxOpacity: '0.6',
+      textboxWidth: '75%',
+      borderSize: '0px',
+      borderColor: '#96BE3C',
+      borderPosition: 'left',
+      position: 'middleCenter',
+      height: "650px",
+      width: "1250px",
+      logoSize: "small",
+      logoColor: "white",
+      logoPosition: "bottomRight",
+      imageIcon: 'https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_3.png',
+      textAlign: 'center',
+      text: [{
+          copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
+          class: 'Source Sans Pro Black',
+          color: '#ffffff',
+          size: '72px'
+        },
+        {
+          copy: '',
+          class: 'Source Sans Pro Light',
+          color: '#ffffff',
+          size: '72px'
+        },
+        {
+          copy: '',
+          class: 'Source Sans Pro Regular',
+          color: '#d4d4d4',
+          size: '28px'
+        }
+      ]
+    },
+    {
+      name: "Social [Case Study]",
       background: 'https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
@@ -156,7 +193,44 @@ var data = {
           size: '28px'
         }
       ]
-    }
+    },
+    {
+      name: "Social [Webinar]",
+      background: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      textboxColor: '#0C1C47',
+      textBoxOpacity: '0.6',
+      textboxWidth: '75%',
+      borderSize: '12px',
+      borderColor: '#96BE3C',
+      borderPosition: 'bottom',
+      position: 'fullscreen',
+      height: "650px",
+      width: "1250px",
+      logoSize: "small",
+      logoColor: "white",
+      logoPosition: "bottomRight",
+      imageIcon: '',
+      textAlign: 'center',
+      text: [{
+          copy: 'Webinar',
+          class: 'Source Sans Pro Black',
+          color: '#96BE3C',
+          size: '32px'
+        },
+        {
+          copy: 'Fraud Prevention:<br/>What You Need to Know',
+          class: 'Source Sans Pro Light',
+          color: '#ffffff',
+          size: '72px'
+        },
+        {
+          copy: '<strong>April 17, 2019</strong><br/>2:00PM - 3:00 P.M. EDT',
+          class: 'Source Sans Pro Regular',
+          color: '#d4d4d4',
+          size: '32px'
+        }
+      ]
+    },
   ],
   background: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
   textboxColor: '#0C1C47',
@@ -173,6 +247,8 @@ var data = {
   logoSize: "small",
   logoColor: "white",
   logoPosition: "topRight",
+  imageIcon: '',
+  textAlign: 'left',
   text: [{
       copy: 'We\'re Hiring!',
       class: 'Source Sans Pro Black',
@@ -244,8 +320,10 @@ var app = new Vue({
           this.logoColor = this.templates[i].logoColor;
           this.logoSize = this.templates[i].logoSize;
           this.logoPosition = this.templates[i].logoPosition;
+          this.imageIcon = this.templates[i].imageIcon;
+          this.textAlign = this.templates[i].textAlign;
 
-          for(var j = 0; j < this.templates[i].text.length; j++) {
+          for (var j = 0; j < this.templates[i].text.length; j++) {
             this.text[j].copy = this.templates[i].text[j].copy;
             this.text[j].class = this.templates[i].text[j].class;
             this.text[j].color = this.templates[i].text[j].color;
@@ -264,6 +342,7 @@ var app = new Vue({
       htmlToImage.toPng(document.getElementById('myImage'))
         .then(function(dataUrl) {
           var link = document.createElement('a');
+          link.target = '_blank';
           link.download = 'my-image-name.png';
           link.href = dataUrl;
           link.click();
