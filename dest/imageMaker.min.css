@@ -66,7 +66,7 @@
   min-height: 800px; }
   .imageMaker .imageMenu {
     background: #2b2e33;
-    padding: 30px 30px 60px 30px;
+    padding: 30px 30px 60px;
     min-height: 800px;
     height: 100vh;
     overflow-y: scroll; }
@@ -79,7 +79,7 @@
     .imageMaker .imageMenu .toggleAdvanced {
       display: block;
       font-family: SourceSansPro-Regular, arial, sans-serif;
-      font-size: .85rem;
+      font-size: 0.85rem;
       text-transform: uppercase;
       margin-bottom: 10px; }
     .imageMaker .imageMenu label {
@@ -155,10 +155,10 @@
         .imageMaker .imageContainer .imagePost .textBox.centerLeft {
           vertical-align: middle;
           height: auto; }
-        .imageMaker .imageContainer .imagePost .textBox .centerRight {
+        .imageMaker .imageContainer .imagePost .textBox.centerRight {
           vertical-align: middle;
           margin-left: auto; }
-          .imageMaker .imageContainer .imagePost .textBox .centerRight .imageContent {
+          .imageMaker .imageContainer .imagePost .textBox.centerRight .imageContent {
             float: right; }
         .imageMaker .imageContainer .imagePost .textBox.bottomLeft {
           vertical-align: bottom; }
@@ -193,6 +193,53 @@
           font-size: 45px; }
         .imageMaker .imageContainer .imagePost .imageContent .h3 {
           font-family: SourceSansPro-Light, arial, sans-serif; }
+    .imageMaker .imageContainer .imageIcon {
+      display: inline-block; }
+      .imageMaker .imageContainer .imageIcon img {
+        display: block; }
+    .imageMaker .imageContainer .arcLogo {
+      background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png") center center no-repeat;
+      background-size: contain;
+      position: absolute;
+      margin: 30px; }
+      .imageMaker .imageContainer .arcLogo.logoHide {
+        display: none; }
+      .imageMaker .imageContainer .arcLogo.x-small {
+        width: 40px;
+        height: 18px; }
+      .imageMaker .imageContainer .arcLogo.small {
+        width: 77px;
+        height: 34px; }
+      .imageMaker .imageContainer .arcLogo.medium {
+        width: 152px;
+        height: 62px; }
+      .imageMaker .imageContainer .arcLogo.large {
+        width: 236px;
+        height: 94px; }
+      .imageMaker .imageContainer .arcLogo.topRight {
+        top: 0;
+        right: 0; }
+      .imageMaker .imageContainer .arcLogo.topLeft {
+        top: 0;
+        left: 0; }
+      .imageMaker .imageContainer .arcLogo.bottomLeft {
+        bottom: 0;
+        left: 0; }
+      .imageMaker .imageContainer .arcLogo.bottomRight {
+        bottom: 0;
+        right: 0; }
+      .imageMaker .imageContainer .arcLogo.teal {
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png") center center no-repeat;
+        background-size: contain; }
+      .imageMaker .imageContainer .arcLogo.black {
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-black.png") center center no-repeat;
+        background-size: contain; }
+      .imageMaker .imageContainer .arcLogo.white {
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png") center center no-repeat;
+        background-size: contain; }
+      .imageMaker .imageContainer .arcLogo.gray {
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-gray.png") center center no-repeat;
+        background-size: contain; }
 
 
 /*# sourceMappingURL=imageMaker.min.css.map*/

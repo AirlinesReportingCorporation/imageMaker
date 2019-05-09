@@ -852,7 +852,7 @@
                           <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_3.png">Reliable Delivery</option>
                           <option value="https://www2.arccorp.com/globalassets/support--training/fraud-prevention/fraudprevention_matrix4_231x170.png">Computer w/ Checkmark</option>
                           <option value="https://www2.arccorp.com/globalassets/products--participation/travel-agencies/become-an-arc-agent/ticket-icon-231x170.png">Ticket</option>
-                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_2.png"><Custom>File</Custom></option>
+                          <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_2.png">Custom File</option>
                           <option value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_4.png">Global</option>
                           <option value="https://www2.arccorp.com/globalassets/homepage/redesign/securityicon.png">Secure</option>
                           <option value="https://www2.arccorp.com/globalassets/homepage/redesign/automated.png">Automation</option>
@@ -928,7 +928,7 @@
               <div id="myImage" v-bind:class="currentTemplate + ' imagePost'" v-bind:style="{ 'background': backgroundFormat, 'width': width, 'height': height }">
 
                 <div class="textBox" v-bind:class="position" v-bind:style="[fullscreen()]">
-                  <div v-bind:class="'imageContent '" v-bind:style="[{'background' : rgba, 'width': textboxWidth, borderFormat}, borderFormat, {'max-width': width, 'max-height': height}]">
+                  <div v-bind:class="'imageContent '" v-bind:style="[{'background' : rgba, 'width': textboxWidth}, borderFormat, {'max-width': width, 'max-height': height}]">
                     <div class="imageIcon"><img v-bind:src="imageIcon"></div>
                     <div class="imageContentInner">
                       <div v-for="textItem in text" v-bind:style="{'color' : textItem.color, 'font-size': textItem.size, 'font-family': textItem.class}" v-html="textItem.copy">
