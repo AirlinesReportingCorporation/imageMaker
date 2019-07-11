@@ -109,6 +109,12 @@
       height: 2.2rem;
     }
 
+    .hrInputs {
+      background-color: #222222;
+      border-top: 6px solid #189bb0;
+      padding-bottom: 25px;
+    }
+
     .inputContainer {
       padding: 10px 30px;
       background: #222222;
@@ -116,6 +122,14 @@
       border-radius: 4px;
       margin-bottom: 35px;
       box-shadow: rgba(0, 0, 0, 0.3) 0 20px 60px -10px;
+
+      &.hrinputContainer {
+        margin-bottom: 0;
+        border: none;
+        textarea {
+          margin-bottom: 0 ;
+        }
+      }
     }
 
     .selectWrapper {

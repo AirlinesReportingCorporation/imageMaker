@@ -11,7 +11,8 @@
  module.exports = [{
    mode: 'development',
    entry: {
-     imageMaker: './public/js/main.js'
+     imageMaker: './public/js/main.js',
+     hr: './public/js/hr.js'
    },
    output: {
      filename: '[name].min.js',

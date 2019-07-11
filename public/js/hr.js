@@ -5,6 +5,7 @@ import '../css/main.scss';
 import 'simplebar';
 import $ from 'jquery';
 import Vue from 'vue';
+import saveAs from 'file-saver';
 const htmlToImage = require('html-to-image');
 
 var images = [];
@@ -16,7 +17,7 @@ var data = {
   },
   templates: [{
       name: "Job Posting [Full Screen]",
-      background: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      background: 'https://www2.arccorp.com/globalassets/imageMaker/hr-tool2.jpg',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
       textboxWidth: '75%',
@@ -31,19 +32,19 @@ var data = {
       logoPosition: "topRight",
       text: [{
           copy: 'We\'re Hiring!',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#96BE3C',
           size: '72px'
         },
         {
           copy: 'Managing Director of the Senior Level Analyst',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: 'Arlington, VA',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
@@ -51,7 +52,7 @@ var data = {
     },
     {
       name: "Job Posting [Bottom Box]",
-      background: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      background: 'https://www2.arccorp.com/globalassets/about-us/customer-successes/customer-success-jumbo3.jpg',
       textboxColor: '#189bb0',
       textBoxOpacity: '0.8',
       textboxWidth: '100%',
@@ -69,134 +70,27 @@ var data = {
       logoPosition: "topRight",
       text: [{
           copy: 'We\'re Hiring!',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#0C1C47',
           size: '48px'
         },
         {
           copy: 'Bilingual Customer Service Representative (Spanish / English)',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '60px'
         },
         {
           copy: 'Arlington, VA',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
       ]
     },
     {
-      name: "Social [Full Screen]",
-      background: 'https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-      textboxColor: '#0C1C47',
-      textBoxOpacity: '0.6',
-      textboxWidth: '75%',
-      borderSize: '0px',
-      borderColor: '#96BE3C',
-      borderPosition: 'left',
-      position: 'middleCenter',
-      height: "650px",
-      width: "1250px",
-      logoSize: "small",
-      logoColor: "white",
-      logoPosition: "bottomRight",
-      text: [{
-          copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
-          class: 'SourceSansPro-Black',
-          color: '#ffffff',
-          size: '72px'
-        },
-        {
-          copy: '',
-          class: 'SourceSansPro-Light',
-          color: '#ffffff',
-          size: '72px'
-        },
-        {
-          copy: '',
-          class: 'SourceSansPro-Regular',
-          color: '#d4d4d4',
-          size: '28px'
-        }
-      ]
-    },
-    {
-      name: "Social [Full Screen, Top Icon]",
-      background: 'https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-      textboxColor: '#0C1C47',
-      textBoxOpacity: '0.6',
-      textboxWidth: '75%',
-      borderSize: '0px',
-      borderColor: '#96BE3C',
-      borderPosition: 'left',
-      position: 'middleCenter',
-      height: "650px",
-      width: "1250px",
-      logoSize: "small",
-      logoColor: "white",
-      logoPosition: "bottomRight",
-      imageIcon: 'https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_3.png',
-      textAlign: 'center',
-      text: [{
-          copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
-          class: 'SourceSansPro-Black',
-          color: '#ffffff',
-          size: '72px'
-        },
-        {
-          copy: '',
-          class: 'SourceSansPro-Light',
-          color: '#ffffff',
-          size: '72px'
-        },
-        {
-          copy: '',
-          class: 'SourceSansPro-Regular',
-          color: '#d4d4d4',
-          size: '28px'
-        }
-      ]
-    },
-    {
-      name: "Social [Case Study]",
-      background: 'https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg',
-      textboxColor: '#0C1C47',
-      textBoxOpacity: '0.6',
-      textboxWidth: '50%',
-      borderSize: '12px',
-      borderColor: '#96BE3C',
-      borderPosition: 'left',
-      position: 'centerLeft',
-      height: "650px",
-      width: "1250px",
-      logoSize: "small",
-      logoColor: "white",
-      logoPosition: "topLeft",
-      text: [{
-          copy: 'Case Study',
-          class: 'SourceSansPro-Black',
-          color: '#96BE3C',
-          size: '36px'
-        },
-        {
-          copy: 'ARC Reporting Tool Saves Great GetAways Travel Time and Resources',
-          class: 'SourceSansPro-Light',
-          color: '#ffffff',
-          size: '60px'
-        },
-        {
-          copy: '',
-          class: 'SourceSansPro-Regular',
-          color: '#d4d4d4',
-          size: '28px'
-        }
-      ]
-    },
-    {
-      name: "Social [Webinar]",
-      background: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+      name: "Job Posting [Center Box]",
+      background: 'https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
       textboxWidth: '75%',
@@ -212,27 +106,27 @@ var data = {
       imageIcon: '',
       textAlign: 'center',
       text: [{
-          copy: 'Webinar',
-          class: 'SourceSansPro-Black',
+          copy: 'We\'re Hiring',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#96BE3C',
           size: '32px'
         },
         {
-          copy: 'Fraud Prevention:<br/>What You Need to Know',
-          class: 'SourceSansPro-Light',
+          copy: 'Managing Director of the Senior Level Analyst',
+          class: '"SourceSansPro-Light", arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
-          copy: '<strong>April 17, 2019</strong><br/>2:00PM - 3:00 P.M. EDT',
-          class: 'SourceSansPro-Regular',
+          copy: 'Arlington, VA',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '32px'
         }
       ]
     },
   ],
-  background: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+  background: 'https://www2.arccorp.com/globalassets/imageMaker/hr-tool2.jpg',
   textboxColor: '#0C1C47',
   textBoxOpacity: '0.7',
   textboxWidth: '75%',
@@ -251,19 +145,19 @@ var data = {
   textAlign: 'left',
   text: [{
       copy: 'We\'re Hiring!',
-      class: 'SourceSansPro-Black',
+      class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
       color: '#96BE3C',
       size: '72px'
     },
     {
       copy: 'Managing Director of the Senior Level Analyst',
-      class: 'SourceSansPro-Light',
+      class: 'SourceSansPro-Light, Source Sans Pro Light, arial, sans-serif',
       color: '#ffffff',
       size: '72px'
     },
     {
       copy: 'Arlington, VA',
-      class: 'SourceSansPro-Regular',
+      class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
       color: '#d4d4d4',
       size: '28px'
     }
@@ -343,7 +237,7 @@ var app = new Vue({
         .then(function(dataUrl) {
           var link = document.createElement('a');
           link.target = '_blank';
-          link.download = 'my-image-name.png';
+          link.download = 'banner';
           link.href = dataUrl;
           link.click();
         });
