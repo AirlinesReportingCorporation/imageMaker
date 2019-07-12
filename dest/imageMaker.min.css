@@ -41,6 +41,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; }
 
+body {
+  font-size: 18px; }
+
 .data-panel {
   margin-top: 0 !important;
   height: auto !important;
@@ -62,17 +65,36 @@
     margin-right: 0 !important; }
 
 .imageMaker {
+  background: #222222;
   margin: 0 auto;
   min-height: 800px; }
+  .imageMaker .ctaBtn {
+    border-radius: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    border-radius: 4px;
+    background: #189bb0; }
+    .imageMaker .ctaBtn:hover {
+      border: none; }
   .imageMaker .imageMenu {
-    background: #2b2e33;
-    padding: 30px 30px 60px;
+    background: #ffffff;
+    padding: 0;
     min-height: 800px;
     height: 100vh;
-    overflow-y: scroll; }
+    overflow-y: auto;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 20px 60px -10px; }
     .imageMaker .imageMenu .imageMenuLogo {
       text-align: center;
-      margin-bottom: 30px; }
+      padding: 30px 15px;
+      background: #189bb0;
+      background: -webkit-linear-gradient(to left, #16bdc8 20%, #189bb0 70%);
+      background: -o-linear-gradient(to left, #16bdc8 20%, #189bb0 70%);
+      background: -moz-linear-gradient(to left, #16bdc8 20%, #189bb0 70%);
+      background: linear-gradient(to left, #16bdc8 20%, #189bb0 70%); }
       .imageMaker .imageMenu .imageMenuLogo img {
         width: 100%;
         max-width: 100px; }
@@ -83,43 +105,63 @@
       text-transform: uppercase;
       margin-bottom: 10px; }
     .imageMaker .imageMenu label {
-      color: #ffffff;
-      margin-bottom: 5px; }
+      font-family: SourceSansPro-Black, 'Source Sans Pro Black', arial, sans-serif;
+      color: #189bb0;
+      margin-bottom: 5px;
+      font-size: 1rem;
+      text-transform: capitalize; }
     .imageMaker .imageMenu input {
       margin-bottom: 25px;
-      height: 2.2rem; }
+      height: 2.5rem; }
     .imageMaker .imageMenu .hrInputs {
-      background-color: #222222;
-      border-top: 6px solid #189bb0;
+      background: transparent;
+      border-top: 1px solid #dddddd;
       padding-bottom: 25px; }
     .imageMaker .imageMenu .inputContainer {
       padding: 10px 30px;
-      background: #222222;
-      border-top: 4px solid #189bb0;
-      border-radius: 4px;
-      margin-bottom: 35px;
-      box-shadow: rgba(0, 0, 0, 0.3) 0 20px 60px -10px; }
-      .imageMaker .imageMenu .inputContainer.hrinputContainer {
-        margin-bottom: 0;
-        border: none; }
-        .imageMaker .imageMenu .inputContainer.hrinputContainer textarea {
-          margin-bottom: 0; }
+      background: transparent;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin-bottom: 5px;
+      border: none; }
+      .imageMaker .imageMenu .inputContainer textarea {
+        margin-bottom: 10px;
+        border-radius: 0;
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-left: 5px solid #dddddd;
+        color: #6D6E71;
+        padding: 15px 20px;
+        border-left: 5px solid #dddddd;
+        min-height: 0;
+        font-size: 1rem; }
+        .imageMaker .imageMenu .inputContainer textarea:active, .imageMaker .imageMenu .inputContainer textarea:focus {
+          background: #f6f6f6;
+          color: #000000;
+          border-left: 5px solid #189bb0;
+          box-shadow: rgba(0, 0, 0, 0.5) 0 20px 60px -10px; }
     .imageMaker .imageMenu .selectWrapper {
       position: relative;
       margin-right: 7px; }
       .imageMaker .imageMenu .selectWrapper select {
         position: relative;
-        height: 2.2rem;
+        height: 2.5rem;
         color: #242039;
-        background: #f6f6f6;
-        border: 1px solid #eaeaea;
-        border-radius: 3px;
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 0;
         font-family: SourceSansPro-Regular;
-        font-size: 0.875rem;
+        font-size: 1rem;
         padding: 0.5rem 2.5rem 0.5rem 0.5rem;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none; }
+        .imageMaker .imageMenu .selectWrapper select:active, .imageMaker .imageMenu .selectWrapper select:focus {
+          background: #f6f6f6;
+          color: #000000;
+          box-shadow: rgba(0, 0, 0, 0.5) 0 20px 60px -10px; }
+        .imageMaker .imageMenu .selectWrapper select:hover {
+          cursor: pointer; }
       .imageMaker .imageMenu .selectWrapper:after {
         position: absolute;
         display: block;
@@ -129,10 +171,10 @@
         font-family: 'icomoon' !important;
         right: 0;
         top: 0;
-        height: 2.2rem;
-        padding: 10px;
+        height: 2.5rem;
+        padding: 12px;
         z-index: 3;
-        border-radius: 0 3px 3px 0;
+        border-radius: 0;
         pointer-events: none;
         font-size: 12px; }
   .imageMaker .imageContainer {
