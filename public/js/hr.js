@@ -113,7 +113,7 @@ var data = {
         },
         {
           copy: 'Managing Director of the Senior Level Analyst',
-          class: '"SourceSansPro-Light", arial, sans-serif',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },

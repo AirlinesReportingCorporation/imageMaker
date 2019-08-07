@@ -31,19 +31,19 @@ var data = {
       logoPosition: "topRight",
       text: [{
           copy: 'We\'re Hiring!',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#96BE3C',
           size: '72px'
         },
         {
           copy: 'Managing Director of the Senior Level Analyst',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: 'Arlington, VA',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
@@ -69,19 +69,19 @@ var data = {
       logoPosition: "topRight",
       text: [{
           copy: 'We\'re Hiring!',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#0C1C47',
           size: '48px'
         },
         {
           copy: 'Bilingual Customer Service Representative (Spanish / English)',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '60px'
         },
         {
           copy: 'Arlington, VA',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
@@ -104,19 +104,19 @@ var data = {
       logoPosition: "bottomRight",
       text: [{
           copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: '',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: '',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
@@ -141,19 +141,19 @@ var data = {
       textAlign: 'center',
       text: [{
           copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: '',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: '',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
@@ -176,19 +176,19 @@ var data = {
       logoPosition: "topLeft",
       text: [{
           copy: 'Case Study',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#96BE3C',
           size: '36px'
         },
         {
           copy: 'ARC Reporting Tool Saves Great GetAways Travel Time and Resources',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '60px'
         },
         {
           copy: '',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '28px'
         }
@@ -213,19 +213,19 @@ var data = {
       textAlign: 'center',
       text: [{
           copy: 'Webinar',
-          class: 'SourceSansPro-Black',
+          class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
           color: '#96BE3C',
           size: '32px'
         },
         {
           copy: 'Fraud Prevention:<br/>What You Need to Know',
-          class: 'SourceSansPro-Light',
+          class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
           color: '#ffffff',
           size: '72px'
         },
         {
           copy: '<strong>April 17, 2019</strong><br/>2:00PM - 3:00 P.M. EDT',
-          class: 'SourceSansPro-Regular',
+          class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
           color: '#d4d4d4',
           size: '32px'
         }
@@ -251,19 +251,19 @@ var data = {
   textAlign: 'left',
   text: [{
       copy: 'We\'re Hiring!',
-      class: 'SourceSansPro-Black',
+      class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
       color: '#96BE3C',
       size: '72px'
     },
     {
       copy: 'Managing Director of the Senior Level Analyst',
-      class: 'SourceSansPro-Light',
+      class: 'Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif',
       color: '#ffffff',
       size: '72px'
     },
     {
       copy: 'Arlington, VA',
-      class: 'SourceSansPro-Regular',
+      class: 'Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif',
       color: '#d4d4d4',
       size: '28px'
     }
