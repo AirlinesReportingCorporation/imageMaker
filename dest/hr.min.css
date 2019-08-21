@@ -177,6 +177,8 @@ body {
         border-radius: 0;
         pointer-events: none;
         font-size: 12px; }
+  .imageMaker .customUpload input {
+    font-family: SourceSansPro-Regular, arial, sans-serif; }
   .imageMaker .imageContainer {
     padding: 15px;
     max-width: 1250px;

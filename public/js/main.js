@@ -333,6 +333,12 @@ var app = new Vue({
 
       }
     },
+    onFileChange(event) {
+      const file = event.target.files[0];
+      this.background = URL.createObjectURL(file);
+      var val = 'url("' + this.background + '") center center/cover no-repeat !important';
+      return val;
+    },
     setSize: function(e) {
       var val = (e.target.value).split("by");
       this.width = val[0].trim();
