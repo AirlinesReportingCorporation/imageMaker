@@ -959,11 +959,11 @@
           </div>
           <div class="col-md-9">
             <div class="imageContainer" v-bind:style="{ textAlign: textAlign }">
-              <div id="myImage" v-bind:class="currentTemplate + ' imagePost'" v-bind:style="{ 'background': backgroundFormat, 'width': width, 'height': height }">
+              <div id="myImage" class="imagePost" v-bind:style="{ 'background': backgroundFormat, 'width': width, 'height': height }">
 
                 <div class="textBox" v-bind:class="position" v-bind:style="[fullscreen()]">
                   <div v-bind:class="'imageContent '" v-bind:style="[{'background' : rgba, 'width': textboxWidth}, borderFormat, {'max-width': width, 'max-height': height}]">
-                    <div class="imageIcon"><img v-bind:src="imageIcon"></div>
+                    <div v-if="imageIcon != ''" class="imageIcon"><img v-bind:src="imageIcon"></div>
                     <div class="imageContentInner">
                       <div v-for="textItem in text" v-bind:style="{'color' : textItem.color, 'font-size': textItem.size, 'font-family': textItem.class}" v-html="textItem.copy">
                       </div>

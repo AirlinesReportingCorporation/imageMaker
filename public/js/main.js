@@ -6,6 +6,7 @@ import 'simplebar';
 import $ from 'jquery';
 import Vue from 'vue';
 const htmlToImage = require('html-to-image');
+const download = require('downloadjs');
 
 var images = [];
 
@@ -67,6 +68,8 @@ var data = {
       logoSize: "small",
       logoColor: "teal",
       logoPosition: "topRight",
+      imageIcon: '',
+      textAlign: 'left',
       text: [{
           copy: 'We\'re Hiring!',
           class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
@@ -93,7 +96,7 @@ var data = {
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
       textboxWidth: '75%',
-      borderSize: '0px',
+      borderSize: '0',
       borderColor: '#96BE3C',
       borderPosition: 'left',
       position: 'middleCenter',
@@ -102,6 +105,8 @@ var data = {
       logoSize: "small",
       logoColor: "white",
       logoPosition: "bottomRight",
+      imageIcon: '',
+      textAlign: 'left',
       text: [{
           copy: 'Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019',
           class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
@@ -128,7 +133,7 @@ var data = {
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
       textboxWidth: '75%',
-      borderSize: '0px',
+      borderSize: '0',
       borderColor: '#96BE3C',
       borderPosition: 'left',
       position: 'middleCenter',
@@ -174,6 +179,8 @@ var data = {
       logoSize: "small",
       logoColor: "white",
       logoPosition: "topLeft",
+      imageIcon: '',
+      textAlign: 'left',
       text: [{
           copy: 'Case Study',
           class: 'Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif',
@@ -336,6 +343,7 @@ var app = new Vue({
     onFileChange(event) {
       const file = event.target.files[0];
       this.background = URL.createObjectURL(file);
+      console.log("test");
       var val = 'url("' + this.background + '") center center/cover no-repeat !important';
       return val;
     },
@@ -345,13 +353,11 @@ var app = new Vue({
       this.height = val[1].trim();
     },
     saveImage: function() {
-      htmlToImage.toPng(document.getElementById('myImage'))
+      htmlToImage.toPng(document.getElementById('myImage'), {cacheBust: true})
         .then(function(dataUrl) {
-          var link = document.createElement('a');
-          link.target = '_blank';
-          link.download = 'my-image-name.png';
-          link.href = dataUrl;
-          link.click();
+          download(dataUrl, 'my-image.png');
+        }).catch(function(error) {
+          console.error('oops, something went wrong!', error);
         });
     },
     fullscreen: function() {
