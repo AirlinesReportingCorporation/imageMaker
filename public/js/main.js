@@ -305,7 +305,7 @@ var app = new Vue({
       return obj;
     },
     backgroundFormat: function() {
-      var val = 'url("' + this.background + '") center center/cover no-repeat !important';
+      var val = 'url("' + this.background.split("?")[0] + '") center center/cover no-repeat !important';
       return val;
     }
   },
@@ -342,9 +342,11 @@ var app = new Vue({
     },
     onFileChange(event) {
       const file = event.target.files[0];
-      this.background = URL.createObjectURL(file);
-      console.log("test");
+      var blob = URL.createObjectURL(file);
+      this.background = blob.split("?")[0];
+      
       var val = 'url("' + this.background + '") center center/cover no-repeat !important';
+      //this.background = val;
       return val;
     },
     setSize: function(e) {
@@ -353,7 +355,7 @@ var app = new Vue({
       this.height = val[1].trim();
     },
     saveImage: function() {
-      htmlToImage.toPng(document.getElementById('myImage'), {cacheBust: true})
+      htmlToImage.toPng(document.getElementById('myImage'))
         .then(function(dataUrl) {
           download(dataUrl, 'my-image.png');
         }).catch(function(error) {
