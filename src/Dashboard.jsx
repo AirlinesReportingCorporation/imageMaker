@@ -30,6 +30,17 @@ function hexToRgb(hex) {
     : null;
 }
 
+function getBorder(value, type) {
+  var size = value.split(" ")[0];
+  var color = value.split(" ")[2];
+
+  if (type == "size") {
+    return size;
+  }
+
+  return color;
+}
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -37,17 +48,13 @@ class Dashboard extends Component {
     this.state = {
       imageBoxStyle: {
         height: "650px",
-        width: "1250",
+        width: "1250px",
         backgroundImage:
           "url('https://www2.arccorp.com/globalassets/imageMaker/airplanes/1.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         alignItems: "center",
-        borderLeft: 0,
-        borderRight: 0,
-        borderTop: 0,
-        borderBottom: 0,
         justifyContent: "center"
       },
       textBoxHex: "#189bb0",
@@ -57,7 +64,11 @@ class Dashboard extends Component {
         width: "50%",
         padding: "15px",
         margin: "15px",
-        height: "auto"
+        height: "auto",
+        borderLeft: "0px solid transparent",
+        borderRight: "0px solid transparent",
+        borderTop: "0px solid transparent",
+        borderBottom: "0px solid transparent"
       },
       textContentStyle: {
         width: "100%",
@@ -120,53 +131,64 @@ class Dashboard extends Component {
           },
           {
             name: "ARC Image 2 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-2.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-2.jpg"
           },
           {
             name: "ARC Image 3 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-3.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-3.jpg"
           },
           {
             name: "ARC Image 4 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
           },
           {
             name: "ARC Image 5 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-5.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-5.jpg"
           },
           {
             name: "ARC Image 6 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-6.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-6.jpg"
           },
           {
             name: "ARC Image 7 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-7.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-7.jpg"
           },
           {
             name: "ARC Image 8 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-8.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-8.jpg"
           },
           {
             name: "ARC Image 9 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
           },
           {
             name: "ARC Image 10 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-10.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-10.jpg"
           },
           {
             name: "ARC Image 11 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-11.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-11.jpg"
           },
           {
             name: "ARC Image 12 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-12.jpg"
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-12.jpg"
           },
           {
             name: "ARC Image 13 ",
-            image: "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-13.jpg"
-          },
-
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-13.jpg"
+          }
         ]
       },
       settingsMenu: "Content",
@@ -187,6 +209,7 @@ class Dashboard extends Component {
     this.imageCenter = this.imageCenter.bind(this);
     this.onFileChange = this.onFileChange.bind(this);
     this.saveImage = this.saveImage.bind(this);
+    this.setBorder = this.setBorder.bind(this);
   }
 
   bgSelectProp(key) {
@@ -201,15 +224,14 @@ class Dashboard extends Component {
       backgroundPosition: t.state.imageBoxStyle.backgroundPosition,
       backgroundRepeat: t.state.imageBoxStyle.backgroundRepeat,
       alignItems: t.state.imageBoxStyle.alignItems,
-      borderLeft: t.state.imageBoxStyle.borderLeft,
-      borderRight: t.state.imageBoxStyle.borderRight,
-      borderTop: t.state.imageBoxStyle.borderTop,
-      borderBottom: t.state.imageBoxStyle.borderBottom,
       justifyContent: t.state.imageBoxStyle.justifyContent
     };
 
     if (key == "backgroundImage") {
       temp[key] = "url(" + e + ")";
+    }
+    if (key.indexOf("border") > -1) {
+      var direction = key.split("border")[1];
     } else {
       temp[key] = e;
     }
@@ -217,6 +239,37 @@ class Dashboard extends Component {
     this.setState({
       imageBoxStyle: temp
     });
+  }
+
+  setBorder(borderProperty, key) {
+    var currentValue = this.state.textBoxStyle[key];
+    var size = this.state.textBoxStyle[key].split(" ")[0];
+    var color = this.state.textBoxStyle[key].split(" ")[2];
+
+    var temp = {
+      background: this.state.textBoxStyle.background,
+      width: this.state.textBoxStyle.width,
+      width: this.state.textBoxStyle.width,
+      padding: this.state.textBoxStyle.padding,
+      margin: this.state.textBoxStyle.margin,
+      height: this.state.textBoxStyle.height,
+      borderLeft: this.state.textBoxStyle.borderLeft,
+      borderRight: this.state.textBoxStyle.borderRight,
+      borderTop: this.state.textBoxStyle.borderTop,
+      borderBottom: this.state.textBoxStyle.borderBottom
+    };
+
+    if (borderProperty == "size") {
+      size = event.target.value;
+    } else if (borderProperty == "color") {
+      color = event.target.value;
+    }
+
+    var val = size + " solid " + color;
+
+    temp[key] = val;
+
+    this.setState({ textBoxStyle: temp });
   }
 
   onFileChange() {
@@ -291,10 +344,6 @@ class Dashboard extends Component {
       backgroundPosition: t.state.imageBoxStyle.backgroundPosition,
       backgroundRepeat: t.state.imageBoxStyle.backgroundRepeat,
       alignItems: t.state.imageBoxStyle.alignItems,
-      borderLeft: t.state.imageBoxStyle.borderLeft,
-      borderRight: t.state.imageBoxStyle.borderRight,
-      borderTop: t.state.imageBoxStyle.borderTop,
-      borderBottom: t.state.imageBoxStyle.borderBottom,
       justifyContent: t.state.imageBoxStyle.justifyContent
     };
 
@@ -337,7 +386,7 @@ class Dashboard extends Component {
       fontWeight: this.state.textContent[index].style.fontWeight,
       fontSize: this.state.textContent[index].style.fontSize,
       padding: this.state.textContent[index].style.padding,
-      textAlign: this.state.textContent[index].style.textAlign,
+      textAlign: this.state.textContent[index].style.textAlign
     };
 
     //console.log(tempStyle);
@@ -368,7 +417,11 @@ class Dashboard extends Component {
       width: this.state.textBoxStyle.width,
       padding: this.state.textBoxStyle.padding,
       margin: this.state.textBoxStyle.margin,
-      height: this.state.textBoxStyle.height
+      height: this.state.textBoxStyle.height,
+      borderLeft: this.state.textBoxStyle.borderLeft,
+      borderRight: this.state.textBoxStyle.borderRight,
+      borderTop: this.state.textBoxStyle.borderTop,
+      borderBottom: this.state.textBoxStyle.borderBottom
     };
 
     var opacity = temp.background.split(",")[3].replace(")", "");
@@ -859,6 +912,64 @@ class Dashboard extends Component {
                         <option value="80%">80%</option>{" "}
                         <option value="100%">100%</option>
                       </Form.Control>
+                      <div className="row">
+                        {["Left", "Right", "Top", "Bottom"].map(function(
+                          dir,
+                          i
+                        ) {
+                          return (
+                            <div key={i} className="col">
+                              <Form.Label className="mt-2">
+                                {dir} Border
+                              </Form.Label>
+                              <Form.Control
+                                size="sm"
+                                as="select"
+                                className=" mb-2"
+                                onChange={this.setBorder.bind(
+                                  this,
+                                  "size",
+                                  "border" + dir
+                                )}
+                              >
+                                <option value="0px">0px</option>{" "}
+                                <option value="2px">2px</option>{" "}
+                                <option value="4px">4px</option>{" "}
+                                <option value="6px">6px</option>{" "}
+                                <option value="8px">8px</option>{" "}
+                                <option value="10px">10px</option>{" "}
+                                <option value="12px">12px</option>{" "}
+                                <option value="14px">14px</option>{" "}
+                                <option value="16px">16px</option>{" "}
+                                <option value="18px">18px</option>{" "}
+                                <option value="20px">20px</option>
+                              </Form.Control>
+
+                              <Form.Control
+                                size="sm"
+                                as="select"
+                                className=""
+                                onChange={this.setBorder.bind(
+                                  this,
+                                  "color",
+                                  "border" + dir
+                                )}
+                              >
+                                <option value="transparent">Transparent</option>
+                                <option value="#FFFFFF">White</option>
+                                <option value="#0C1C47">Dark Blue</option>
+                                <option value="#189bb0">Teal</option>
+                                <option value="#d4d4d4">Gray</option>
+                                <option value="#96BE3C">Green</option>
+                                <option value="#DF7C32">Orange</option>
+                                <option value="#AB035C">Pink</option>
+                                <option value="#6B1C40">Purple</option>
+                              </Form.Control>
+                            </div>
+                          );
+                        },
+                        this)}
+                      </div>
                       <hr />
                       <Form.Label className="mt-2">Padding</Form.Label>
                       <Form.Control
