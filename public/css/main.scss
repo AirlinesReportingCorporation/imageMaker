@@ -1,27 +1,8 @@
-/* latin */
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url("https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin */
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url("https://fonts.gstatic.com/s/sourcesanspro/v12/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin */
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 900;
-  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url("https://fonts.gstatic.com/s/sourcesanspro/v12/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlxdu.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+
+
+@import "bootstrap";
+@import "override";
+@import "topmenu";
 
 .supernav {
   display: none !important;
@@ -44,7 +25,12 @@
 }
 
 body {
-  font-size: 18px;
+  font-size: 16px;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+}
+
+body a {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
 
 .data-panel {
@@ -59,6 +45,7 @@ body {
 
 .data-panel .background {
   position: relative;
+  overflow: hidden;
 }
 
 .data-panel + footer {
@@ -95,17 +82,22 @@ body {
     }
   }
 
+  .imageMenuContainer {
+    padding: 20px;
+    
+  }
+
   .imageMenu {
     background: #ffffff;
-    padding: 0;
-    min-height: 800px;
-    height: 100vh;
+    padding: 15px 0;
+    min-height: 700px;
+    height: 700px;
     overflow-y: auto;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 20px 60px -10px;
+    box-shadow: rgba(20, 20, 20, 0.8) 0 20px 60px -10px;
 
     .imageMenuLogo {
       text-align: center;
-      padding: 30px 15px;
+      padding: 15px;
       background: #189bb0;
       background: -webkit-linear-gradient(to left, #16bdc8 20%, #189bb0 70%);
       background: -o-linear-gradient(to left, #16bdc8 20%, #189bb0 70%);
@@ -127,11 +119,17 @@ body {
     }
 
     label {
-      font-family: SourceSansPro-Black, 'Source Sans Pro Black', arial, sans-serif;
+      font-family: SourceSansPro-Black, "Source Sans Pro Black", arial,
+        sans-serif;
       color: #189bb0;
-      margin-bottom: 5px;
-      font-size: 1rem;
+      font-size: 0.875rem;
       text-transform: capitalize;
+    }
+
+    label.text-label {
+      font-size: 0.875rem;
+      color: #bbbbbb;
+      margin-bottom: 0;
     }
 
     input {
@@ -148,10 +146,7 @@ body {
     .inputContainer {
       padding: 10px 30px;
       background: transparent;
-      margin-top: 30px;
-      //border-radius: 4px;
       margin-bottom: 20px;
-      //box-shadow: rgba(0, 0, 0, 0.3) 0 20px 60px -10px;
       margin-bottom: 5px;
       border: none;
 
@@ -161,7 +156,7 @@ body {
         background: #ffffff;
         border: 1px solid #dddddd;
         border-left: 5px solid #dddddd;
-        color: #6D6E71;
+        color: #6d6e71;
         padding: 15px 20px;
         border-left: 5px solid #dddddd;
         min-height: 0;
@@ -213,7 +208,7 @@ body {
         background: #189bb0;
         color: #ffffff;
         content: "\e90c";
-        font-family: 'icomoon' !important;
+        font-family: "icomoon" !important;
         right: 0;
         top: 0;
         height: 2.5rem;
@@ -221,7 +216,7 @@ body {
         z-index: 3;
         border-radius: 0;
         pointer-events: none;
-        font-size: 12px;
+        font-size: 0.875rem;
       }
     }
   }
@@ -232,15 +227,21 @@ body {
     }
   }
 
+  .imageContainer.previewImage {
+    position: relative;
+    left: 0;
+  }
+
   .imageContainer {
     padding: 15px;
     max-width: 1250px;
-    margin: 0 auto;
+    //margin: 0 auto;
+    position: absolute;
+    left: -99999999999px;
 
     .imagePost {
       position: relative;
       display: table;
-      overflow: hidden;
 
       .textBox {
         position: relative;
@@ -353,7 +354,8 @@ body {
     }
 
     .arcLogo {
-      background: url('https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png')center center no-repeat;
+      background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png")
+        center center no-repeat;
       background-size: contain;
       position: absolute;
       margin: 30px;
@@ -403,22 +405,26 @@ body {
       }
 
       &.teal {
-        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png") center center no-repeat;
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png")
+          center center no-repeat;
         background-size: contain;
       }
 
       &.black {
-        background: url('https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-black.png')center center no-repeat;
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-black.png")
+          center center no-repeat;
         background-size: contain;
       }
 
       &.white {
-        background: url('https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png')center center no-repeat;
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png")
+          center center no-repeat;
         background-size: contain;
       }
 
       &.gray {
-        background: url('https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-gray.png')center center no-repeat;
+        background: url("https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-gray.png")
+          center center no-repeat;
         background-size: contain;
       }
     }

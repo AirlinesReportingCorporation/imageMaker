@@ -5,21 +5,22 @@ import "../css/main.scss";
 import "simplebar";
 import $ from "jquery";
 import Vue from "vue";
+import saveAs from "file-saver";
 const htmlToImage = require("html-to-image");
-const download = require("downloadjs");
 
 var images = [];
 
 var data = {
   currentTemplate: {
     name: "jobPosting",
-    index: 0
+    index: 0,
+    zoom: 0.6
   },
   templates: [
     {
       name: "Job Posting [Full Screen]",
       background:
-        "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "https://www2.arccorp.com/globalassets/imageMaker/hr-tool2.jpg",
       textboxColor: "#0C1C47",
       textBoxOpacity: "0.6",
       textboxWidth: "75%",
@@ -32,10 +33,6 @@ var data = {
       logoSize: "small",
       logoColor: "white",
       logoPosition: "topRight",
-      marginBottom: "0px",
-      marginTop: "0px",
-      marginLeft: "0px",
-      marginRight: "0px",
       text: [
         {
           copy: "We're Hiring!",
@@ -63,7 +60,7 @@ var data = {
     {
       name: "Job Posting [Bottom Box]",
       background:
-        "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "https://www2.arccorp.com/globalassets/about-us/customer-successes/customer-success-jumbo3.jpg",
       textboxColor: "#189bb0",
       textBoxOpacity: "0.8",
       textboxWidth: "100%",
@@ -79,12 +76,6 @@ var data = {
       logoSize: "small",
       logoColor: "teal",
       logoPosition: "topRight",
-      imageIcon: "",
-      textAlign: "left",
-      marginBottom: "0px",
-      marginTop: "0px",
-      marginLeft: "0px",
-      marginRight: "0px",
       text: [
         {
           copy: "We're Hiring!",
@@ -110,151 +101,9 @@ var data = {
       ]
     },
     {
-      name: "Social [Full Screen]",
+      name: "Job Posting [Center Box]",
       background:
-        "https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-      textboxColor: "#0C1C47",
-      textBoxOpacity: "0.6",
-      textboxWidth: "75%",
-      borderSize: "0",
-      borderColor: "#96BE3C",
-      borderPosition: "left",
-      position: "middleCenter",
-      height: "650px",
-      width: "1250px",
-      logoSize: "small",
-      logoColor: "white",
-      logoPosition: "bottomRight",
-      imageIcon: "",
-      textAlign: "left",
-      marginBottom: "0px",
-      marginTop: "0px",
-      marginLeft: "0px",
-      marginRight: "0px",
-      text: [
-        {
-          copy:
-            "Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019",
-          class:
-            "Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif",
-          color: "#ffffff",
-          size: "72px"
-        },
-        {
-          copy: "",
-          class:
-            "Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif",
-          color: "#ffffff",
-          size: "72px"
-        },
-        {
-          copy: "",
-          class:
-            "Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif",
-          color: "#d4d4d4",
-          size: "28px"
-        }
-      ]
-    },
-    {
-      name: "Social [Full Screen, Top Icon]",
-      background:
-        "https://images.unsplash.com/photo-1483450388369-9ed95738483c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-      textboxColor: "#0C1C47",
-      textBoxOpacity: "0.6",
-      textboxWidth: "75%",
-      borderSize: "0",
-      borderColor: "#96BE3C",
-      borderPosition: "left",
-      position: "middleCenter",
-      height: "650px",
-      width: "1250px",
-      logoSize: "small",
-      logoColor: "white",
-      logoPosition: "bottomRight",
-      imageIcon:
-        "https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_3.png",
-      textAlign: "center",
-      marginBottom: "0px",
-      marginTop: "0px",
-      marginLeft: "0px",
-      marginRight: "0px",
-      text: [
-        {
-          copy:
-            "Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019",
-          class:
-            "Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif",
-          color: "#ffffff",
-          size: "72px"
-        },
-        {
-          copy: "",
-          class:
-            "Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif",
-          color: "#ffffff",
-          size: "72px"
-        },
-        {
-          copy: "",
-          class:
-            "Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif",
-          color: "#d4d4d4",
-          size: "28px"
-        }
-      ]
-    },
-    {
-      name: "Social [Case Study]",
-      background:
-        "https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg",
-      textboxColor: "#0C1C47",
-      textBoxOpacity: "0.6",
-      textboxWidth: "50%",
-      borderSize: "12px",
-      borderColor: "#96BE3C",
-      borderPosition: "left",
-      position: "centerLeft",
-      height: "650px",
-      width: "1250px",
-      logoSize: "small",
-      logoColor: "white",
-      logoPosition: "topLeft",
-      imageIcon: "",
-      textAlign: "left",
-      marginBottom: "0px",
-      marginTop: "0px",
-      marginLeft: "0px",
-      marginRight: "0px",
-      text: [
-        {
-          copy: "Case Study",
-          class:
-            "Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif",
-          color: "#96BE3C",
-          size: "36px"
-        },
-        {
-          copy:
-            "ARC Reporting Tool Saves Great GetAways Travel Time and Resources",
-          class:
-            "Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif",
-          color: "#ffffff",
-          size: "60px"
-        },
-        {
-          copy: "",
-          class:
-            "Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif",
-          color: "#d4d4d4",
-          size: "28px"
-        }
-      ]
-    },
-    {
-      name: "Social [Webinar]",
-      background:
-        "https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+        "https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg",
       textboxColor: "#0C1C47",
       textBoxOpacity: "0.6",
       textboxWidth: "75%",
@@ -269,27 +118,23 @@ var data = {
       logoPosition: "bottomRight",
       imageIcon: "",
       textAlign: "center",
-      marginBottom: "0px",
-      marginTop: "0px",
-      marginLeft: "0px",
-      marginRight: "0px",
       text: [
         {
-          copy: "Webinar",
+          copy: "We're Hiring",
           class:
             "Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif",
           color: "#96BE3C",
           size: "32px"
         },
         {
-          copy: "Fraud Prevention:<br/>What You Need to Know",
+          copy: "Managing Director of the Senior Level Analyst",
           class:
             "Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif",
           color: "#ffffff",
           size: "72px"
         },
         {
-          copy: "<strong>April 17, 2019</strong><br/>2:00PM - 3:00 P.M. EDT",
+          copy: "Arlington, VA",
           class:
             "Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif",
           color: "#d4d4d4",
@@ -298,8 +143,7 @@ var data = {
       ]
     }
   ],
-  background:
-    "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+  background: "https://www2.arccorp.com/globalassets/imageMaker/hr-tool2.jpg",
   textboxColor: "#0C1C47",
   textBoxOpacity: "0.7",
   textboxWidth: "75%",
@@ -316,10 +160,6 @@ var data = {
   logoPosition: "topRight",
   imageIcon: "",
   textAlign: "left",
-  marginBottom: "0px",
-  marginTop: "0px",
-  marginLeft: "0px",
-  marginRight: "0px",
   text: [
     {
       copy: "We're Hiring!",
@@ -329,7 +169,7 @@ var data = {
     },
     {
       copy: "Managing Director of the Senior Level Analyst",
-      class: "Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif",
+      class: "SourceSansPro-Light, Source Sans Pro Light, arial, sans-serif",
       color: "#ffffff",
       size: "72px"
     },
@@ -340,8 +180,7 @@ var data = {
       color: "#d4d4d4",
       size: "28px"
     }
-  ],
-  zoom: 0.8
+  ]
 };
 
 jcf.destroyAll();
@@ -375,27 +214,21 @@ var app = new Vue({
     backgroundFormat: function() {
       var val =
         'url("' +
-        this.background.split("?")[0] +
+        this.background +
         '") center center/cover no-repeat !important';
       return val;
-    },
-    aspectPercent: function() {
-      var aspect = parseFloat(this.height) / parseFloat(this.width);
-      return aspect * 100.0 + "%";
-    },
-    formatZoom: function() {
-      return Math.round(this.zoom * 100.0) + "%";
     }
   },
   methods: {
-    toggleZoom: function(direction) {
-      var val = this.zoom;
+    toggleZoom: function() {
+      var direction = "plus";
       if (direction == "plus") {
-        this.zoom < 2.0 ? (this.zoom = val + 0.1) : (this.zoom = this.zoom);
+        var val = this.currentTemplate.zoom;
+        this.currentTemplate.zoom < 2.0 ? (this.currentTemplate.zoom = val + 0.1) : "";
       } else if (direction == "reset") {
-        this.zoom = 0.8;
+        this.currentTemplate.zoom == 1.0;
       } else {
-        this.zoom > 0.2 ? (this.zoom = val - 0.1) : (this.zoom = this.zoom);
+        this.currentTemplate.zoom > 2.0 ? (this.currentTemplate.zoom = val - 0.1) : "";
       }
     },
     setCurrentTemplate: function(e) {
@@ -417,10 +250,6 @@ var app = new Vue({
           this.logoPosition = this.templates[i].logoPosition;
           this.imageIcon = this.templates[i].imageIcon;
           this.textAlign = this.templates[i].textAlign;
-          this.marginBottom = this.templates[i].marginBottom;
-          this.marginTop = this.templates[i].marginTop;
-          this.marginRight = this.templates[i].marginRight;
-          this.marginLeft = this.templates[i].marginLeft;
 
           for (var j = 0; j < this.templates[i].text.length; j++) {
             this.text[j].copy = this.templates[i].text[j].copy;
@@ -431,18 +260,6 @@ var app = new Vue({
         }
       }
     },
-    onFileChange(event) {
-      var file = event.target.files[0];
-      var blob = URL.createObjectURL(file);
-      this.background = blob.split("?")[0];
-
-      var val =
-        'url("' +
-        this.background +
-        '") center center/cover no-repeat !important';
-      //this.background = val;
-      return val;
-    },
     setSize: function(e) {
       var val = e.target.value.split("by");
       this.width = val[0].trim();
@@ -450,12 +267,13 @@ var app = new Vue({
     },
     saveImage: function() {
       htmlToImage
-        .toJpeg(document.getElementById("myImage"), { quality: 0.9 })
+        .toPng(document.getElementById("myImage"))
         .then(function(dataUrl) {
-          download(dataUrl, "my-image.jpg");
-        })
-        .catch(function(error) {
-          console.error("oops, something went wrong!", error);
+          var link = document.createElement("a");
+          link.target = "_blank";
+          link.download = "banner";
+          link.href = dataUrl;
+          link.click();
         });
     },
     fullscreen: function() {

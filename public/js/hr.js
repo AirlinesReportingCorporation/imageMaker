@@ -5,8 +5,8 @@ import '../css/main.scss';
 import 'simplebar';
 import $ from 'jquery';
 import Vue from 'vue';
-import saveAs from 'file-saver';
 const htmlToImage = require('html-to-image');
+const download = require('downloadjs');
 
 var images = [];
 
@@ -17,7 +17,7 @@ var data = {
   },
   templates: [{
       name: "Job Posting [Full Screen]",
-      background: 'https://www2.arccorp.com/globalassets/imageMaker/hr-tool2.jpg',
+      background: 'https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-24.jpg',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
       textboxWidth: '75%',
@@ -52,7 +52,7 @@ var data = {
     },
     {
       name: "Job Posting [Bottom Box]",
-      background: 'https://www2.arccorp.com/globalassets/about-us/customer-successes/customer-success-jumbo3.jpg',
+      background: 'https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-12.jpg',
       textboxColor: '#189bb0',
       textBoxOpacity: '0.8',
       textboxWidth: '100%',
@@ -90,7 +90,7 @@ var data = {
     },
     {
       name: "Job Posting [Center Box]",
-      background: 'https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg',
+      background: 'https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-5.jpg',
       textboxColor: '#0C1C47',
       textBoxOpacity: '0.6',
       textboxWidth: '75%',
@@ -126,7 +126,7 @@ var data = {
       ]
     },
   ],
-  background: 'https://www2.arccorp.com/globalassets/imageMaker/hr-tool2.jpg',
+  background: 'https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-8.jpg',
   textboxColor: '#0C1C47',
   textBoxOpacity: '0.7',
   textboxWidth: '75%',
@@ -235,11 +235,9 @@ var app = new Vue({
     saveImage: function() {
       htmlToImage.toPng(document.getElementById('myImage'))
         .then(function(dataUrl) {
-          var link = document.createElement('a');
-          link.target = '_blank';
-          link.download = 'banner';
-          link.href = dataUrl;
-          link.click();
+          download(dataUrl, 'my-image.png');
+        }).catch(function(error) {
+          console.error('oops, something went wrong!', error);
         });
     },
     fullscreen: function() {

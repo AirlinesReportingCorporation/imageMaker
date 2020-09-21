@@ -1,0 +1,14 @@
+.form-group {
+  margin-bottom: 5px;
+}
+
+.btn-primary, .btn-primary:hover:not(.disabled), .btn-primary:focus:not(.disabled), .btn-primary:not(:disabled):not(.disabled):active {
+  background: #189bb0;
+  border-color: #189bb0;
+  box-shadow: none;
+
+}
+
+.btn-primary:hover:not(.disabled) {
+  opacity: .8;
+}
