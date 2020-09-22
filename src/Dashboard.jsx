@@ -19,6 +19,8 @@ import Banner from "./components/Banner";
 const htmlToImage = require("html-to-image");
 const download = require("downloadjs");
 
+import templatesMarketing from "./templates";
+
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
@@ -50,7 +52,7 @@ class Dashboard extends Component {
         height: "650px",
         width: "1250px",
         backgroundImage:
-          "url('https://www2.arccorp.com/globalassets/imageMaker/airplanes/1.jpg')",
+          "url(https://www2.arccorp.com/globalassets/imageMaker/airplanes/1.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
@@ -58,55 +60,59 @@ class Dashboard extends Component {
         justifyContent: "center"
       },
       textBoxHex: "#189bb0",
-      textBoxOpacity: "0.8",
+      textBoxOpacity: "0.9",
       textBoxStyle: {
-        background: "rgba(24, 155, 176, 0.8)",
-        width: "50%",
+        background: "rgba(24, 155, 176,0.9)",
+        width: "70%",
         padding: "15px",
         margin: "15px",
         height: "auto",
         borderLeft: "0px solid transparent",
         borderRight: "0px solid transparent",
-        borderTop: "0px solid transparent",
+        borderTop: "12px solid #0C1C47",
         borderBottom: "0px solid transparent"
       },
-      textContentStyle: {
-        width: "100%",
-        margin: "0 auto",
-        height: "auto"
+      textContentStyle: { width: "100%", margin: "0 auto", height: "auto" },
+      arcLogoStyle: {
+        show: "block",
+        color: "white",
+        position: "bottom right",
+        size: "s",
+        padding: "15px"
       },
       textContent: [
         {
           style: {
-            color: "#ffffff",
-            fontWeight: "400",
-            fontSize: "24px",
-            padding: "15px",
-            textAlign: "left"
+            color: "#96BE3C",
+            fontWeight: "600",
+            fontSize: "30px",
+            padding: "10px 15px",
+            textAlign: "center"
           },
-          text: "test text1"
+          text: "Eyebrow Title"
         },
         {
           style: {
-            color: "#ffffff",
+            color: "#FFFFFF",
             fontWeight: "400",
             fontSize: "72px",
             padding: "15px",
-            textAlign: "left"
+            textAlign: "center"
           },
-          text: "test test2"
+          text: "Lorem Ipsum \n<br/>Dolor Sit Amet"
         },
         {
           style: {
             color: "#ffffff",
             fontWeight: "400",
-            fontSize: "30px",
+            fontSize: "32px",
             padding: "15px",
-            textAlign: "left"
+            textAlign: "center"
           },
-          text: "test test2"
+          text: "Date: <strong>08/12/2020</strong>"
         }
       ],
+      textContentCenter: false,
       saveImage: false,
       imageCategory: "all",
       backgroundImages: {
@@ -192,7 +198,6 @@ class Dashboard extends Component {
         ]
       },
       settingsMenu: "Content",
-      textContentCenter: false,
       unZoom: false
     };
 
@@ -210,6 +215,8 @@ class Dashboard extends Component {
     this.onFileChange = this.onFileChange.bind(this);
     this.saveImage = this.saveImage.bind(this);
     this.setBorder = this.setBorder.bind(this);
+    this.setTemplate = this.setTemplate.bind(this);
+    this.arcLogoStyleChange = this.arcLogoStyleChange.bind(this);
   }
 
   bgSelectProp(key) {
@@ -219,7 +226,10 @@ class Dashboard extends Component {
     var temp = {
       height: t.state.imageBoxStyle.height,
       width: t.state.imageBoxStyle.width,
-      backgroundImage: t.state.imageBoxStyle.backgroundImage,
+      backgroundImage:
+        key == "backgroundImage"
+          ? "url(" + e + ")"
+          : t.state.imageBoxStyle.backgroundImage,
       backgroundSize: t.state.imageBoxStyle.backgroundSize,
       backgroundPosition: t.state.imageBoxStyle.backgroundPosition,
       backgroundRepeat: t.state.imageBoxStyle.backgroundRepeat,
@@ -229,9 +239,6 @@ class Dashboard extends Component {
 
     if (key == "backgroundImage") {
       temp[key] = "url(" + e + ")";
-    }
-    if (key.indexOf("border") > -1) {
-      var direction = key.split("border")[1];
     } else {
       temp[key] = e;
     }
@@ -355,6 +362,22 @@ class Dashboard extends Component {
     this.setState({
       imageBoxStyle: temp
     });
+  }
+
+  arcLogoStyleChange(key) {
+    var e = event.target.value;
+
+    var temp = {
+      show: this.state.arcLogoStyle.show,
+      color: this.state.arcLogoStyle.color,
+      position: this.state.arcLogoStyle.position,
+      size: this.state.arcLogoStyle.size,
+      padding: this.state.arcLogoStyle.padding
+    };
+
+    temp[key] = e;
+
+    this.setState({ arcLogoStyle: temp });
   }
 
   textChange(index) {
@@ -502,6 +525,25 @@ class Dashboard extends Component {
     this.setState({ unZoom: true }, this.saveImage(imageName));
   }
 
+  setTemplate(type) {
+    var i = event.target.value;
+
+    var template = templatesMarketing;
+
+    if (type == "hr") {
+      //temlate = templateHR;
+    }
+
+    template[i].template["imageCategory"] = "all";
+    template[i].template["settingsMenu"] = "Content";
+    template[i].template["unZoom"] = false;
+    template[i].template["backgroundImages"] = this.state.backgroundImages;
+
+    console.log(template[i].template);
+
+    this.setState(template[i].template);
+  }
+
   /*componentDidUpdate() {
     var widthVar = this.state.imageBoxStyle.width.replace("px", "");
     var heightVar = this.state.imageBoxStyle.height.replace("px", "");
@@ -512,9 +554,7 @@ class Dashboard extends Component {
   }*/
 
   render() {
-    console.log(this.props.loginType);
-
-    console.log();
+    //console.log(this.props.loginType);
 
     var e = this;
 
@@ -539,7 +579,8 @@ class Dashboard extends Component {
                 Image Maker
               </div>
             </Col>
-            <Col className="text-right">
+            <Col className="d-flex justify-content-end">
+              <ExportModal stateObj={this.state} />
               <SaveModal
                 size={
                   this.state.imageBoxStyle.width +
@@ -641,7 +682,20 @@ class Dashboard extends Component {
                               style={{ marginBottom: "10px" }}
                               size="sm"
                               as="select"
-                            ></Form.Control>
+                              onChange={this.setTemplate.bind(
+                                this,
+                                "Marketing"
+                              )}
+                            >
+                              <option>Choose Template</option>
+                              {templatesMarketing.map(function(item, i) {
+                                return (
+                                  <option key={i} value={i}>
+                                    {templatesMarketing[i].name}
+                                  </option>
+                                );
+                              })}
+                            </Form.Control>
 
                             <Form.Control
                               size="sm"
@@ -692,6 +746,7 @@ class Dashboard extends Component {
                     textContentStyle={this.state.textContentStyle}
                     textContent={this.state.textContent}
                     textContentCenter={this.state.textContentCenter}
+                    arcLogoStyle={this.state.arcLogoStyle}
                     saveImage={false}
                     unZoom={this.state.unZoom}
                   />
@@ -707,7 +762,7 @@ class Dashboard extends Component {
                 >
                   <Dropdown.Item href="#/Content">Content</Dropdown.Item>
                   <Dropdown.Item href="#/Styles">Styles</Dropdown.Item>
-                  <Dropdown.Item href="#/Text">Text</Dropdown.Item>
+                  <Dropdown.Item href="#/Logo">Logo</Dropdown.Item>
                 </DropdownButton>
 
                 <div className="settingsSection">
@@ -720,7 +775,7 @@ class Dashboard extends Component {
                             <Form.Control
                               as="textarea"
                               rows="3"
-                              defaultValue={data.text}
+                              value={data.text}
                               onChange={this.textChange.bind(this, i)}
                             />
                             <Form inline>
@@ -730,7 +785,7 @@ class Dashboard extends Component {
                                   size="sm"
                                   as="select"
                                   className="settingsSelect"
-                                  defaultValue={data.style.color}
+                                  value={data.style.color}
                                   onChange={this.textStyleChange.bind(
                                     this,
                                     i,
@@ -754,7 +809,7 @@ class Dashboard extends Component {
                                   size="sm"
                                   as="select"
                                   className="settingsSelect"
-                                  defaultValue={data.style.fontWeight}
+                                  value={data.style.fontWeight}
                                   onChange={this.textStyleChange.bind(
                                     this,
                                     i,
@@ -775,7 +830,7 @@ class Dashboard extends Component {
                                   size="sm"
                                   as="select"
                                   className="settingsSelect"
-                                  defaultValue={data.style.fontSize}
+                                  value={data.style.fontSize}
                                   onChange={this.textStyleChange.bind(
                                     this,
                                     i,
@@ -787,6 +842,7 @@ class Dashboard extends Component {
                                   <option value="48px">48px</option>
                                   <option value="36px">36px</option>
                                   <option value="32px">32px</option>
+                                  <option value="30px">30px</option>
                                   <option value="28px">28px</option>
                                   <option value="24px">24px</option>
                                   <option value="20px">20px</option>
@@ -800,7 +856,7 @@ class Dashboard extends Component {
                                   size="sm"
                                   as="select"
                                   className="settingsSelect"
-                                  defaultValue={data.style.textAlign}
+                                  value={data.style.textAlign}
                                   onChange={this.textStyleChange.bind(
                                     this,
                                     i,
@@ -819,7 +875,7 @@ class Dashboard extends Component {
                                   size="sm"
                                   type="text"
                                   className="settingsSelect"
-                                  defaultValue={data.style.padding}
+                                  value={data.style.padding}
                                   onChange={this.textStyleChange.bind(
                                     this,
                                     i,
@@ -840,7 +896,7 @@ class Dashboard extends Component {
                         size="sm"
                         as="select"
                         className=""
-                        defaultValue={this.state.textBoxHex}
+                        value={this.state.textBoxHex}
                         onChange={this.textBoxChange.bind(this, "background")}
                       >
                         <option value="#FFFFFF">White</option>
@@ -857,7 +913,7 @@ class Dashboard extends Component {
                         size="sm"
                         as="select"
                         className=""
-                        defaultValue={this.state.textBoxOpacity}
+                        value={this.state.textBoxOpacity}
                         onChange={this.textBoxChange.bind(this, "opacity")}
                       >
                         <option value="0">0</option>
@@ -878,9 +934,10 @@ class Dashboard extends Component {
                         size="sm"
                         as="select"
                         className=""
-                        defaultValue={this.state.textBoxStyle.width}
+                        value={this.state.textBoxStyle.width}
                         onChange={this.textBoxChange.bind(this, "width")}
                       >
+                        <option value="auto">auto</option>{" "}
                         <option value="20%">20%</option>{" "}
                         <option value="25%">25%</option>{" "}
                         <option value="30%">30%</option>{" "}
@@ -897,7 +954,7 @@ class Dashboard extends Component {
                         size="sm"
                         as="select"
                         className=""
-                        defaultValue={this.state.textBoxStyle.height}
+                        value={this.state.textBoxStyle.height}
                         onChange={this.textBoxChange.bind(this, "height")}
                       >
                         <option value="auto">auto</option>{" "}
@@ -926,6 +983,11 @@ class Dashboard extends Component {
                                 size="sm"
                                 as="select"
                                 className=" mb-2"
+                                value={
+                                  this.state.textBoxStyle["border" + dir].split(
+                                    " "
+                                  )[0]
+                                }
                                 onChange={this.setBorder.bind(
                                   this,
                                   "size",
@@ -949,6 +1011,11 @@ class Dashboard extends Component {
                                 size="sm"
                                 as="select"
                                 className=""
+                                value={
+                                  this.state.textBoxStyle["border" + dir].split(
+                                    " "
+                                  )[2]
+                                }
                                 onChange={this.setBorder.bind(
                                   this,
                                   "color",
@@ -971,20 +1038,20 @@ class Dashboard extends Component {
                         this)}
                       </div>
                       <hr />
-                      <Form.Label className="mt-2">Padding</Form.Label>
+                      <Form.Label className="mt-2">Text Box Padding</Form.Label>
                       <Form.Control
                         size="sm"
                         type="text"
                         className=""
-                        defaultValue={this.state.textBoxStyle.padding}
+                        value={this.state.textBoxStyle.padding}
                         onChange={this.textBoxChange.bind(this, "padding")}
                       />
-                      <Form.Label className="mt-2">Margin</Form.Label>
+                      <Form.Label className="mt-2">Text Box Margin</Form.Label>
                       <Form.Control
                         size="sm"
                         type="text"
                         className=""
-                        defaultValue={this.state.textBoxStyle.margin}
+                        value={this.state.textBoxStyle.margin}
                         onChange={this.textBoxChange.bind(this, "margin")}
                       />
                       <hr />
@@ -1034,7 +1101,62 @@ class Dashboard extends Component {
                       </Form.Control>
                     </div>
                   )}
-                  {this.state.settingsMenu === "Text" && <div></div>}
+                  {this.state.settingsMenu === "Logo" && (
+                    <div>
+                      <Form.Label>Logo Color</Form.Label>
+                      <Form.Control
+                        size="sm"
+                        as="select"
+                        className=""
+                        value={this.state.arcLogoStyle.color}
+                        onChange={this.arcLogoStyleChange.bind(this, "color")}
+                      >
+                        <option value="white">White</option>
+                        <option value="teal">Teal</option>
+                        <option value="black">Black</option>
+                        <option value="gray">Gray</option>
+                      </Form.Control>
+
+                      <Form.Label>Position</Form.Label>
+                      <Form.Control
+                        size="sm"
+                        as="select"
+                        className=""
+                        value={this.state.arcLogoStyle.position}
+                        onChange={this.arcLogoStyleChange.bind(
+                          this,
+                          "position"
+                        )}
+                      >
+                        <option value="bottom right">Bottom Right</option>
+                        <option value="bottom left">Bottom Left</option>
+                        <option value="top right">Top Right</option>
+                        <option value="top left">Top Left</option>
+                      </Form.Control>
+
+                      <Form.Label>Size</Form.Label>
+                      <Form.Control
+                        size="sm"
+                        as="select"
+                        className=""
+                        value={this.state.arcLogoStyle.size}
+                        onChange={this.arcLogoStyleChange.bind(this, "size")}
+                      >
+                        <option value="s">Small</option>
+                        <option value="m">Medium</option>
+                        <option value="l">Large</option>
+                      </Form.Control>
+
+                      <Form.Label className="mt-2">Logo Padding</Form.Label>
+                      <Form.Control
+                        size="sm"
+                        type="text"
+                        className=""
+                        value={this.state.arcLogoStyle.padding}
+                        onChange={this.arcLogoStyleChange.bind(this, "padding")}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1071,7 +1193,7 @@ function SaveModal(props) {
           <Form.Control
             size="sm"
             type="text"
-            defaultValue={fileName}
+            value={fileName}
             onChange={e => setFileName(e.target.value)}
           />
         </Modal.Body>
@@ -1084,6 +1206,44 @@ function SaveModal(props) {
             onClick={props.saveImage.bind(this, fileName + ".jpg")}
           >
             Save Image
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
+}
+
+function ExportModal(props) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <div>
+      <Button variant="outline-primary" className="mr-2" onClick={handleShow}>
+        Export Template
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className="font-weight-bold">
+            Export Template
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <strong>Export Details</strong>
+
+          <div>
+            Copy and email the text below to{" "}
+            <a href="mailto:ifajardo@arccorp.com">ifajardo@arccorp.com</a>. In
+            the email, please include the name of your desired template.
+          </div>
+          <div class="copyTemplate">{JSON.stringify(props.stateObj)}</div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

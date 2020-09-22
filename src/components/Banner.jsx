@@ -11,6 +11,24 @@ import { voteAngular, setLoginType } from "../actions";
 
 import Card from "react-bootstrap/Card";
 
+function setLogoPosition(pos) {
+  var posObj = { bottom: "auto", right: "auto", top: "auto", left: "auto" };
+  if (pos.indexOf("bottom") > -1) {
+    posObj.bottom = 0;
+  }
+  if (pos.indexOf("right") > -1) {
+    posObj.right = 0;
+  }
+  if (pos.indexOf("top") > -1) {
+    posObj.top = 0;
+  }
+  if (pos.indexOf("left") > -1) {
+    posObj.left = 0;
+  }
+
+  return posObj;
+}
+
 class Banner extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +36,7 @@ class Banner extends Component {
   }
 
   render() {
+    var t = this;
     return (
       <div className="dashboardWrapper">
         <div
@@ -25,6 +44,26 @@ class Banner extends Component {
           className={"imageBox " + (this.props.unZoom == true ? "unZoom" : "")}
           style={this.props.imageBoxStyle}
         >
+          <div
+            className="arcLogoImage"
+            style={Object.assign(
+              {
+                display: this.props.arcLogoStyle.show,
+                padding: this.props.arcLogoStyle.padding
+              },
+              setLogoPosition(t.props.arcLogoStyle.position)
+            )}
+          >
+            <img
+              src={
+                "https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-" +
+                this.props.arcLogoStyle.size +
+                "-" +
+                this.props.arcLogoStyle.color +
+                ".png"
+              }
+            />
+          </div>
           <div className="textBox" style={this.props.textBoxStyle}>
             <div
               className={

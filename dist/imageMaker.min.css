@@ -7219,6 +7219,7 @@ label {
   max-width: 100%; }
 
 .imageBox {
+  position: relative;
   display: flex;
   zoom: 0.7;
   background-size: cover;
@@ -7275,6 +7276,9 @@ label {
 .textBox {
   display: flex; }
 
+.textContent {
+  line-height: 1.25; }
+
 .textContentCenter {
   display: flex;
   flex-direction: column;
@@ -7292,4 +7296,16 @@ label {
   width: 70px;
   margin-right: 5px;
   height: 30px; }
+
+.copyTemplate {
+  border: 1px solid #bbbbbb;
+  padding: 10px;
+  height: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 15px;
+  width: 400px; }
+
+.arcLogoImage {
+  position: absolute; }
 
