@@ -43,6 +43,16 @@ function getBorder(value, type) {
   return color;
 }
 
+function bgURL(url) {
+  var regExp = /\(([^\)]+)\)/;
+  var matches = regExp.exec(url);
+  
+  if (matches == null) {
+    return "";
+  }
+  return matches[1];
+}
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +62,7 @@ class Dashboard extends Component {
         height: "650px",
         width: "1250px",
         backgroundImage:
-          "url(https://www2.arccorp.com/globalassets/imageMaker/airplanes/1.jpg)",
+          "url(https://www2.arccorp.com/globalassets/imageMaker/airplanes/2.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
@@ -126,74 +136,296 @@ class Dashboard extends Component {
             name: "Airplane at airport 2",
             image:
               "https://www2.arccorp.com/globalassets/imageMaker/airplanes/2.jpg"
+          },
+          {
+            name: "Airplane at airport 3",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/3.jpg"
+          },
+          {
+            name: "Airplane at airport 4",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/4.jpg"
+          },
+          {
+            name: "Airplane at airport 5",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/5.jpg"
+          },
+          {
+            name: "Airplane at airport 6",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/6.jpg"
+          },
+          {
+            name: "Airplane at airport 7",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/7.jpg"
+          },
+          {
+            name: "Airplane at airport 8",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/8.jpg"
+          },
+          {
+            name: "Airplane at airport 9",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/9.jpg"
+          },
+          {
+            name: "Airplane at airport 10",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/10.jpg"
+          },
+          {
+            name: "Airplane at airport 11",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/11.jpg"
+          },
+          {
+            name: "Airplane at airport 12",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/12.jpg"
+          },
+          {
+            name: "Airplane at airport 13",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/13.jpg"
+          },
+          {
+            name: "Airplane at airport 14",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/14.jpg"
+          },
+          {
+            name: "Airplane at airport 15",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/15.jpg"
+          },
+          {
+            name: "Airplane at airport 16",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/16.jpg"
+          },
+          {
+            name: "Airplane at airport 17",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/17.jpg"
+          },
+          {
+            name: "Airplane at airport 18",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/18.jpg"
+          },
+          {
+            name: "Airplane at airport 19",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/19.jpg"
+          },
+          {
+            name: "Airplane at airport 20",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/20.jpg"
+          },
+          {
+            name: "Airplane at airport 21",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/21.jpg"
+          },
+          {
+            name: "Airplane at airport 22",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/22.jpg"
+          },
+          {
+            name: "Airplane at airport 23",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/23.jpg"
+          },
+          {
+            name: "Airplane at airport 24",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/24.jpg"
+          },
+          {
+            name: "Airplane at airport 25",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/25.jpg"
+          },
+          {
+            name: "Airplane at airport 26",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/26.jpg"
+          },
+          {
+            name: "Airplane at airport 27",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/27.jpg"
+          },
+          {
+            name: "Airplane at airport 28",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/28.jpg"
+          },
+          {
+            name: "Airplane at airport 29",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/29.jpg"
+          },
+          {
+            name: "Airplane at airport 30",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/30.jpg"
           }
         ],
         arc: [
           {
-            name: "ARC Image 1",
+            name: "One Person Focus, Sitting",
             tag: "Richard Gordon",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-1.jpg"
           },
           {
-            name: "ARC Image 2 ",
+            name: "One Person Focus - Lobby ",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-2.jpg"
           },
           {
-            name: "ARC Image 3 ",
+            name: "Conversation - Lobby ",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-3.jpg"
           },
           {
-            name: "ARC Image 4 ",
+            name: "One Person Focus - Smiling ",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
           },
           {
-            name: "ARC Image 5 ",
+            name: "Working on laptop",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-5.jpg"
           },
           {
-            name: "ARC Image 6 ",
+            name: "Working on laptop - Lobby ",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-6.jpg"
           },
           {
-            name: "ARC Image 7 ",
+            name: "iPad Presenting - Two People",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-7.jpg"
           },
           {
-            name: "ARC Image 8 ",
+            name: "Meeting Room",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-8.jpg"
           },
           {
-            name: "ARC Image 9 ",
+            name: "Jovial Meeting",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
           },
           {
-            name: "ARC Image 10 ",
+            name: "Clarendon Station",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-10.jpg"
           },
           {
-            name: "ARC Image 11 ",
+            name: "Outside - Funny",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-11.jpg"
           },
           {
-            name: "ARC Image 12 ",
+            name: "Outside - Serious ",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-12.jpg"
           },
           {
-            name: "ARC Image 13 ",
+            name: "Outside - Luggage",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-13.jpg"
+          },
+          {
+            name: "Overhead Meeting Room",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-14.jpg"
+          },
+          {
+            name: "White Meeting Room",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-15.jpg"
+          },
+          {
+            name: "One Person Focus - Thinking",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-15.jpg"
+          },
+          {
+            name: "One Person Focus - Thinking",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-16.jpg"
+          },
+          {
+            name: "One Person Focus - iPad Whiteboard",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-17.jpg"
+          },
+          {
+            name: "Three Person - iPad Presenting",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-18.jpg"
+          },
+          {
+            name: "Multiple Meetings - Glass Divider",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-19.jpg"
+          },
+          {
+            name: "Three Person - Whiteboard",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-20.jpg"
+          },
+          {
+            name: "Three Person - Standing, iPads",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-21.jpg"
+          },
+          {
+            name: "Blue Room Meeting",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-22.jpg"
+          },
+          {
+            name: "Office Meeting - Quote",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-23.jpg"
+          },
+          {
+            name: "Five People - Blue Room",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-24.jpg"
+          },
+          {
+            name: "Lobby - Luggage",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-25.jpg"
+          }
+        ],
+        technology: [
+          {
+            name: "Computer Typing",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/GettyImages-860310256.jpg"
+          },
+          {
+            name: "Overhead Computer",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/GettyImages-864246666.jpg"
+          },
+          {
+            name: "Data Grid",
+            image:
+              "https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg"
           }
         ]
       },
@@ -614,12 +846,16 @@ class Dashboard extends Component {
                               <option value="all">All Categories</option>
                               <option value="airplanes">Airplanes</option>
                               <option value="arc">ARC</option>
+                              <option value="technology">Technology</option>
                             </Form.Control>
 
                             <Form.Control
                               size="sm"
                               as="select"
                               //id="bg-image"
+                              value={bgURL(
+                                this.state.imageBoxStyle.backgroundImage
+                              )}
                               onChange={this.bgSelectProp.bind(
                                 this,
                                 "backgroundImage"
