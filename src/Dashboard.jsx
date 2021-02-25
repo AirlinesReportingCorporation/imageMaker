@@ -46,7 +46,7 @@ function getBorder(value, type) {
 function bgURL(url) {
   var regExp = /\(([^\)]+)\)/;
   var matches = regExp.exec(url);
-  
+
   if (matches == null) {
     return "";
   }
@@ -79,7 +79,7 @@ class Dashboard extends Component {
         height: "auto",
         borderLeft: "0px solid transparent",
         borderRight: "0px solid transparent",
-        borderTop: "12px solid #0C1C47",
+        borderTop: "12px solid #8AC926",
         borderBottom: "0px solid transparent"
       },
       textContentStyle: { width: "100%", margin: "0 auto", height: "auto" },
@@ -93,7 +93,7 @@ class Dashboard extends Component {
       textContent: [
         {
           style: {
-            color: "#96BE3C",
+            color: "#8AC926",
             fontWeight: "600",
             fontSize: "30px",
             padding: "10px 15px",
@@ -1028,14 +1028,31 @@ class Dashboard extends Component {
                                     "color"
                                   )}
                                 >
-                                  <option value="#FFFFFF">White</option>
-                                  <option value="#0C1C47">Dark Blue</option>
-                                  <option value="#189bb0">Teal</option>
-                                  <option value="#d4d4d4">Gray</option>
-                                  <option value="#96BE3C">Green</option>
-                                  <option value="#DF7C32">Orange</option>
-                                  <option value="#AB035C">Pink</option>
-                                  <option value="#6B1C40">Purple</option>
+                                  <optgroup label="">
+                                    <option value="#FFFFFF">White</option>
+                                  </optgroup>
+
+                                  <optgroup label="Primary">
+                                    <option value="#189bb0">ARC Teal</option>
+                                    <option value="#2a2b2c">Tarmac</option>
+                                    <option value="#d4d4d4">
+                                      Altitude Gray
+                                    </option>
+                                  </optgroup>
+
+                                  <optgroup label="Secondary">
+                                    <option value="#316677">Concourse</option>
+                                    <option value="#c6b593">Flap 3</option>
+                                    <option value="#6d6e71">Fuseleage</option>
+                                  </optgroup>
+
+                                  <optgroup label="Tertiary">
+                                    <option value="#383552">Nightshade</option>
+                                    <option value="#f77f00">
+                                      Signal Orange
+                                    </option>
+                                    <option value="#8AC926">Airfield</option>
+                                  </optgroup>
                                 </Form.Control>
                               </div>
 
@@ -1136,13 +1153,24 @@ class Dashboard extends Component {
                         onChange={this.textBoxChange.bind(this, "background")}
                       >
                         <option value="#FFFFFF">White</option>
-                        <option value="#0C1C47">Dark Blue</option>
-                        <option value="#189bb0">Teal</option>
-                        <option value="#d4d4d4">Gray</option>
-                        <option value="#96BE3C">Green</option>
-                        <option value="#DF7C32">Orange</option>
-                        <option value="#AB035C">Pink</option>
-                        <option value="#6B1C40">Purple</option>
+
+                        <optgroup label="Primary">
+                          <option value="#189bb0">ARC Teal</option>
+                          <option value="#2a2b2c">Tarmac</option>
+                          <option value="#d4d4d4">Altitude Gray</option>
+                        </optgroup>
+
+                        <optgroup label="Secondary">
+                          <option value="#316677">Concourse</option>
+                          <option value="#c6b593">Flap 3</option>
+                          <option value="#6d6e71">Fuseleage</option>
+                        </optgroup>
+
+                        <optgroup label="Tertiary">
+                          <option value="#383552">Nightshade</option>
+                          <option value="#f77f00">Signal Orange</option>
+                          <option value="#8AC926">Airfield</option>
+                        </optgroup>
                       </Form.Control>
                       <Form.Label className="mt-2">Opacity</Form.Label>
                       <Form.Control
@@ -1260,13 +1288,24 @@ class Dashboard extends Component {
                               >
                                 <option value="transparent">Transparent</option>
                                 <option value="#FFFFFF">White</option>
-                                <option value="#0C1C47">Dark Blue</option>
-                                <option value="#189bb0">Teal</option>
-                                <option value="#d4d4d4">Gray</option>
-                                <option value="#96BE3C">Green</option>
-                                <option value="#DF7C32">Orange</option>
-                                <option value="#AB035C">Pink</option>
-                                <option value="#6B1C40">Purple</option>
+
+                                <optgroup label="Primary">
+                                  <option value="#189bb0">ARC Teal</option>
+                                  <option value="#2a2b2c">Tarmac</option>
+                                  <option value="#d4d4d4">Altitude Gray</option>
+                                </optgroup>
+
+                                <optgroup label="Secondary">
+                                  <option value="#316677">Concourse</option>
+                                  <option value="#c6b593">Flap 3</option>
+                                  <option value="#6d6e71">Fuseleage</option>
+                                </optgroup>
+
+                                <optgroup label="Tertiary">
+                                  <option value="#383552">Nightshade</option>
+                                  <option value="#f77f00">Signal Orange</option>
+                                  <option value="#8AC926">Airfield</option>
+                                </optgroup>
                               </Form.Control>
                             </div>
                           );
@@ -1348,7 +1387,7 @@ class Dashboard extends Component {
                         onChange={this.arcLogoStyleChange.bind(this, "color")}
                       >
                         <option value="white">White</option>
-                        <option value="teal">Teal</option>
+                        <option value="teal">ARC Teal</option>
                         <option value="black">Black</option>
                         <option value="gray">Gray</option>
                       </Form.Control>
