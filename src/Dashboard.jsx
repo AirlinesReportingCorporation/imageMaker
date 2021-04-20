@@ -739,8 +739,9 @@ class Dashboard extends Component {
 
   saveImage(imageName) {
     var t = this;
+    t.setState({ unZoom: true });
     htmlToImage
-      .toJpeg(document.getElementById("myImage"), { quality: 1 })
+      .toJpeg(document.getElementById("myImage"), { quality: 1, pixelRatio: 1 })
       .then(function(dataUrl) {
         download(dataUrl, imageName);
         t.setState({ unZoom: false });
