@@ -1,21 +1,22 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 const extractSass = new MiniCssExtractPlugin({
   filename: "[name].min.css",
-  chunkFilename: "[id].css"
+  chunkFilename: "[id].css",
 });
 
 module.exports = {
   entry: {
-    "imageMaker": "./src/index.jsx"
+    "imageMaker": "./src/index.jsx",
   },
   output: {
     filename: "[name].min.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
   },
+  target: ["web", "es5"],
   module: {
     rules: [
       {
@@ -24,28 +25,30 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
-          }
-        }
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader?url=false",
-          "sass-loader"
-        ]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
   },
   resolve: {
     alias: {
-      vue: "vue/dist/vue.js"
+      vue: "vue/dist/vue.js",
     },
-    extensions: ["*", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx"],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    extractSass
-  ]
+    extractSass,
+    new NodePolyfillPlugin(),
+  ],
 };
