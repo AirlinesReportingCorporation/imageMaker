@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --open --config webpack.dev.js",
+    "start": "npx webpack serve --config webpack.dev.js",
     "dev": "npm start",
     "build": "webpack --config webpack.prod.js",
     "test": "npm start"
-  },
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
