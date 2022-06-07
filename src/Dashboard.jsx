@@ -27,7 +27,7 @@ function hexToRgb(hex) {
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
+        b: parseInt(result[3], 16),
       }
     : null;
 }
@@ -67,7 +67,7 @@ class Dashboard extends Component {
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
       },
       textBoxHex: "#189bb0",
       textBoxOpacity: "0.9",
@@ -80,7 +80,7 @@ class Dashboard extends Component {
         borderLeft: "0px solid transparent",
         borderRight: "0px solid transparent",
         borderTop: "12px solid #8AC926",
-        borderBottom: "0px solid transparent"
+        borderBottom: "0px solid transparent",
       },
       textContentStyle: { width: "100%", margin: "0 auto", height: "auto" },
       arcLogoStyle: {
@@ -88,7 +88,7 @@ class Dashboard extends Component {
         color: "white",
         position: "bottom right",
         size: "s",
-        padding: "15px"
+        padding: "15px",
       },
       textContent: [
         {
@@ -97,9 +97,9 @@ class Dashboard extends Component {
             fontWeight: "600",
             fontSize: "30px",
             padding: "10px 15px",
-            textAlign: "center"
+            textAlign: "center",
           },
-          text: "Eyebrow Title"
+          text: "Eyebrow Title",
         },
         {
           style: {
@@ -107,9 +107,9 @@ class Dashboard extends Component {
             fontWeight: "400",
             fontSize: "72px",
             padding: "15px",
-            textAlign: "center"
+            textAlign: "center",
           },
-          text: "Lorem Ipsum \n<br/>Dolor Sit Amet"
+          text: "Lorem Ipsum \n<br/>Dolor Sit Amet",
         },
         {
           style: {
@@ -117,10 +117,10 @@ class Dashboard extends Component {
             fontWeight: "400",
             fontSize: "32px",
             padding: "15px",
-            textAlign: "center"
+            textAlign: "center",
           },
-          text: "Date: <strong>08/12/2020</strong>"
-        }
+          text: "Date: <strong>08/12/2020</strong>",
+        },
       ],
       textContentCenter: false,
       saveImage: false,
@@ -130,311 +130,315 @@ class Dashboard extends Component {
           {
             name: "Airplane at airport 1",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/1.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/1.jpg",
           },
           {
             name: "Airplane at airport 2",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/2.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/2.jpg",
           },
           {
             name: "Airplane at airport 3",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/3.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/3.jpg",
           },
           {
             name: "Airplane at airport 4",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/4.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/4.jpg",
           },
           {
             name: "Airplane at airport 5",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/5.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/5.jpg",
           },
           {
             name: "Airplane at airport 6",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/6.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/6.jpg",
           },
           {
             name: "Airplane at airport 7",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/7.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/7.jpg",
           },
           {
             name: "Airplane at airport 8",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/8.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/8.jpg",
           },
           {
             name: "Airplane at airport 9",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/9.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/9.jpg",
           },
           {
             name: "Airplane at airport 10",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/10.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/10.jpg",
           },
           {
             name: "Airplane at airport 11",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/11.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/11.jpg",
           },
           {
             name: "Airplane at airport 12",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/12.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/12.jpg",
           },
           {
             name: "Airplane at airport 13",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/13.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/13.jpg",
           },
           {
             name: "Airplane at airport 14",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/14.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/14.jpg",
           },
           {
             name: "Airplane at airport 15",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/15.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/15.jpg",
           },
           {
             name: "Airplane at airport 16",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/16.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/16.jpg",
           },
           {
             name: "Airplane at airport 17",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/17.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/17.jpg",
           },
           {
             name: "Airplane at airport 18",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/18.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/18.jpg",
           },
           {
             name: "Airplane at airport 19",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/19.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/19.jpg",
           },
           {
             name: "Airplane at airport 20",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/20.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/20.jpg",
           },
           {
             name: "Airplane at airport 21",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/21.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/21.jpg",
           },
           {
             name: "Airplane at airport 22",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/22.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/22.jpg",
           },
           {
             name: "Airplane at airport 23",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/23.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/23.jpg",
           },
           {
             name: "Airplane at airport 24",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/24.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/24.jpg",
           },
           {
             name: "Airplane at airport 25",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/25.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/25.jpg",
           },
           {
             name: "Airplane at airport 26",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/26.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/26.jpg",
           },
           {
             name: "Airplane at airport 27",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/27.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/27.jpg",
           },
           {
             name: "Airplane at airport 28",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/28.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/28.jpg",
           },
           {
             name: "Airplane at airport 29",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/29.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/29.jpg",
           },
           {
             name: "Airplane at airport 30",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/30.jpg"
-          }
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/30.jpg",
+          },
         ],
         arc: [
           {
             name: "One Person Focus, Sitting",
             tag: "Richard Gordon",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-1.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-1.jpg",
           },
           {
             name: "One Person Focus - Lobby ",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-2.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-2.jpg",
           },
           {
             name: "Conversation - Lobby ",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-3.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-3.jpg",
           },
           {
             name: "One Person Focus - Smiling ",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg",
           },
           {
             name: "Working on laptop",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-5.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-5.jpg",
           },
           {
             name: "Working on laptop - Lobby ",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-6.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-6.jpg",
           },
           {
             name: "iPad Presenting - Two People",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-7.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-7.jpg",
           },
           {
             name: "Meeting Room",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-8.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-8.jpg",
           },
           {
             name: "Jovial Meeting",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-4.jpg",
           },
           {
             name: "Clarendon Station",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-10.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-10.jpg",
           },
           {
             name: "Outside - Funny",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-11.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-11.jpg",
           },
           {
             name: "Outside - Serious ",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-12.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-12.jpg",
           },
           {
             name: "Outside - Luggage",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-13.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-13.jpg",
           },
           {
             name: "Overhead Meeting Room",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-14.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-14.jpg",
           },
           {
             name: "White Meeting Room",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-15.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-15.jpg",
           },
           {
             name: "One Person Focus - Thinking",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-15.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-15.jpg",
           },
           {
             name: "One Person Focus - Thinking",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-16.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-16.jpg",
           },
           {
             name: "One Person Focus - iPad Whiteboard",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-17.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-17.jpg",
           },
           {
             name: "Three Person - iPad Presenting",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-18.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-18.jpg",
           },
           {
             name: "Multiple Meetings - Glass Divider",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-19.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-19.jpg",
           },
           {
             name: "Three Person - Whiteboard",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-20.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-20.jpg",
           },
           {
             name: "Three Person - Standing, iPads",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-21.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-21.jpg",
           },
           {
             name: "Blue Room Meeting",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-22.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-22.jpg",
           },
           {
             name: "Office Meeting - Quote",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-23.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-23.jpg",
           },
           {
             name: "Five People - Blue Room",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-24.jpg"
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-24.jpg",
           },
           {
             name: "Lobby - Luggage",
             image:
-              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-25.jpg"
-          }
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-25.jpg",
+          },
         ],
         technology: [
           {
             name: "Computer Typing",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/GettyImages-860310256.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/GettyImages-860310256.jpg",
           },
           {
             name: "Overhead Computer",
             image:
-              "https://www2.arccorp.com/globalassets/imageMaker/GettyImages-864246666.jpg"
+              "https://www2.arccorp.com/globalassets/imageMaker/GettyImages-864246666.jpg",
           },
           {
             name: "Data Grid",
             image:
-              "https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg"
-          }
-        ]
+              "https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg",
+          },
+        ],
       },
       settingsMenu: "Content",
-      unZoom: false
+      unZoom: false,
     };
+    
 
     this.updateImage = this.updateImage.bind(this);
     this.catSelect = this.catSelect.bind(this);
+    this.gradientSwitch = this.gradientSwitch.bind(this);
+    this.color1Select = this.color1Select.bind(this);
+    this.color2Select = this.color2Select.bind(this);
     this.settingsChange = this.settingsChange.bind(this);
     this.textChange = this.textChange.bind(this);
     this.templateSizeUpdate = this.templateSizeUpdate.bind(this);
@@ -466,7 +470,7 @@ class Dashboard extends Component {
       backgroundPosition: t.state.imageBoxStyle.backgroundPosition,
       backgroundRepeat: t.state.imageBoxStyle.backgroundRepeat,
       alignItems: t.state.imageBoxStyle.alignItems,
-      justifyContent: t.state.imageBoxStyle.justifyContent
+      justifyContent: t.state.imageBoxStyle.justifyContent,
     };
 
     if (key == "backgroundImage") {
@@ -476,8 +480,20 @@ class Dashboard extends Component {
     }
 
     this.setState({
-      imageBoxStyle: temp
+      imageBoxStyle: temp,
     });
+  }
+
+  gradientSwitch(e) {
+    let isChecked = e.target.checked;
+    console.log(isChecked);
+  }
+  color1Select(select) {
+    console.log("Color 1 selected");
+  }
+
+  color2Select(select) {
+    console.log("Color 2 selected");
   }
 
   setBorder(borderProperty, key) {
@@ -495,7 +511,7 @@ class Dashboard extends Component {
       borderLeft: this.state.textBoxStyle.borderLeft,
       borderRight: this.state.textBoxStyle.borderRight,
       borderTop: this.state.textBoxStyle.borderTop,
-      borderBottom: this.state.textBoxStyle.borderBottom
+      borderBottom: this.state.textBoxStyle.borderBottom,
     };
 
     if (borderProperty == "size") {
@@ -517,7 +533,7 @@ class Dashboard extends Component {
     var background = blob.split("?")[0];
 
     this.imageBoxStyleChange({
-      backgroundImage: "url(" + background + ")"
+      backgroundImage: "url(" + background + ")",
     });
   }
 
@@ -533,7 +549,7 @@ class Dashboard extends Component {
     var temp = {
       width: "100%",
       margin: "0 auto",
-      height: "auto"
+      height: "auto",
     };
 
     temp[key] = e;
@@ -546,25 +562,25 @@ class Dashboard extends Component {
     if (e == "Twitter") {
       this.imageBoxStyleChange({
         width: "1250px",
-        height: "650px"
+        height: "650px",
         //paddingBottom: (650.0 / 1250.0) * 100.0 + "%"
       });
     } else if (e == "Facebook") {
       this.imageBoxStyleChange({
         width: "960px",
-        height: "720px"
+        height: "720px",
         //paddingBottom: (720.0 / 960.0) * 100.0 + "%"
       });
     } else if (e == "LinkedIn") {
       this.imageBoxStyleChange({
         width: "1024px",
-        height: "530px"
+        height: "530px",
         //paddingBottom: (530.0 / 1024.0) * 100.0 + "%"
       });
     } else if (e == "YouTube") {
       this.imageBoxStyleChange({
         width: "1280px",
-        height: "720px"
+        height: "720px",
         //paddingBottom: (720.0 / 1280.0) * 100.0 + "%"
       });
     }
@@ -583,7 +599,7 @@ class Dashboard extends Component {
       backgroundPosition: t.state.imageBoxStyle.backgroundPosition,
       backgroundRepeat: t.state.imageBoxStyle.backgroundRepeat,
       alignItems: t.state.imageBoxStyle.alignItems,
-      justifyContent: t.state.imageBoxStyle.justifyContent
+      justifyContent: t.state.imageBoxStyle.justifyContent,
     };
 
     for (const key in updateObject) {
@@ -592,7 +608,7 @@ class Dashboard extends Component {
     }
 
     this.setState({
-      imageBoxStyle: temp
+      imageBoxStyle: temp,
     });
   }
 
@@ -604,7 +620,7 @@ class Dashboard extends Component {
       color: this.state.arcLogoStyle.color,
       position: this.state.arcLogoStyle.position,
       size: this.state.arcLogoStyle.size,
-      padding: this.state.arcLogoStyle.padding
+      padding: this.state.arcLogoStyle.padding,
     };
 
     temp[key] = e;
@@ -622,7 +638,7 @@ class Dashboard extends Component {
     for (var i = 0; i < length; i++) {
       temp.push({
         style: t.state.textContent[i].style,
-        text: t.state.textContent[i].text
+        text: t.state.textContent[i].text,
       });
     }
 
@@ -641,7 +657,7 @@ class Dashboard extends Component {
       fontWeight: this.state.textContent[index].style.fontWeight,
       fontSize: this.state.textContent[index].style.fontSize,
       padding: this.state.textContent[index].style.padding,
-      textAlign: this.state.textContent[index].style.textAlign
+      textAlign: this.state.textContent[index].style.textAlign,
     };
 
     //console.log(tempStyle);
@@ -651,7 +667,7 @@ class Dashboard extends Component {
     for (var i = 0; i < length; i++) {
       temp.push({
         style: t.state.textContent[i].style,
-        text: t.state.textContent[i].text
+        text: t.state.textContent[i].text,
       });
     }
 
@@ -676,7 +692,7 @@ class Dashboard extends Component {
       borderLeft: this.state.textBoxStyle.borderLeft,
       borderRight: this.state.textBoxStyle.borderRight,
       borderTop: this.state.textBoxStyle.borderTop,
-      borderBottom: this.state.textBoxStyle.borderBottom
+      borderBottom: this.state.textBoxStyle.borderBottom,
     };
 
     var opacity = temp.background.split(",")[3].replace(")", "");
@@ -729,24 +745,26 @@ class Dashboard extends Component {
       borderRight: t.state.imageBoxStyle.borderRight,
       borderTop: t.state.imageBoxStyle.borderTop,
       borderBottom: t.state.imageBoxStyle.borderBottom,
-      justifyContent: t.state.imageBoxStyle.justifyContent
+      justifyContent: t.state.imageBoxStyle.justifyContent,
     };
 
     this.setState({
-      imageBoxStyle: temp
+      imageBoxStyle: temp,
     });
   }
+
+  
 
   saveImage(imageName) {
     var t = this;
     t.setState({ unZoom: true });
     htmlToImage
       .toJpeg(document.getElementById("myImage"), { quality: 1, pixelRatio: 1 })
-      .then(function(dataUrl) {
+      .then(function (dataUrl) {
         download(dataUrl, imageName);
         t.setState({ unZoom: false });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error("oops, something went wrong!", error);
       });
 
@@ -864,7 +882,7 @@ class Dashboard extends Component {
                             >
                               {this.state.imageCategory === "all"
                                 ? Object.keys(e.state.backgroundImages).map(
-                                    function(key, i) {
+                                    function (key, i) {
                                       var options = [];
 
                                       for (
@@ -894,7 +912,7 @@ class Dashboard extends Component {
                                   )
                                 : this.state.backgroundImages[
                                     e.state.imageCategory
-                                  ].map(function(item, i) {
+                                  ].map(function (item, i) {
                                     return (
                                       <option key={i} value={item.image}>
                                         {item.name}
@@ -925,7 +943,7 @@ class Dashboard extends Component {
                               )}
                             >
                               <option>Choose Template</option>
-                              {templatesMarketing.map(function(item, i) {
+                              {templatesMarketing.map(function (item, i) {
                                 return (
                                   <option key={i} value={i}>
                                     {templatesMarketing[i].name}
@@ -973,9 +991,45 @@ class Dashboard extends Component {
                           </Form>
                         </div>
                       </div>
+                      <div className="row">
+                        <div className="col-md-4">
+                          <Form.Group controlId="exampleForm.ControlSelect1">
+                            <Form.Switch
+                              type="switch"
+                              id="gradient-switch"
+                              label="Gradient Colors"
+                              onChange={e => this.gradientSwitch(e)} 
+                            />
+                            <Form.Control
+                              size="sm"
+                              as="select"
+                              //id="bg-image-cat"
+                              style={{ marginBottom: "10px" }}
+                              onChange={this.color1Select}
+                            >
+                              <option value="all">Color 1</option>
+                              <option value="airplanes">Color 2</option>
+                              <option value="arc">Color 3</option>
+                              <option value="technology">Color 4</option>
+                            </Form.Control>
+
+                            <Form.Control
+                              size="sm"
+                              as="select"
+                              style={{ marginBottom: "10px" }}
+                              onChange={this.color2Select}
+                            >
+                              <option value="all">Color 1</option>
+                              <option value="airplanes">Color 2</option>
+                              <option value="arc">Color 3</option>
+                              <option value="technology">Color 4</option>
+                            </Form.Control>
+                          </Form.Group>
+                        </div>
+                      </div>
                     </Form>
                   </div>
-
+                  
                   <Banner
                     //style={{ width: "100%", paddingBottom: ratio }}
                     imageBoxStyle={this.state.imageBoxStyle}
@@ -1235,7 +1289,7 @@ class Dashboard extends Component {
                         <option value="100%">100%</option>
                       </Form.Control>
                       <div className="row">
-                        {["Left", "Right", "Top", "Bottom"].map(function(
+                        {["Left", "Right", "Top", "Bottom"].map(function (
                           dir,
                           i
                         ) {
@@ -1443,6 +1497,8 @@ class Dashboard extends Component {
   }
 }
 
+
+
 function SaveModal(props) {
   const [show, setShow] = useState(false);
   const [fileName, setFileName] = useState("myImage");
@@ -1470,7 +1526,7 @@ function SaveModal(props) {
             size="sm"
             type="text"
             value={fileName}
-            onChange={e => setFileName(e.target.value)}
+            onChange={(e) => setFileName(e.target.value)}
           />
         </Modal.Body>
         <Modal.Footer>
@@ -1527,8 +1583,8 @@ function ExportModal(props) {
   );
 }
 
-const mapStateToProps = state => ({
-  loginType: state.loginType
+const mapStateToProps = (state) => ({
+  loginType: state.loginType,
 });
 
 export default connect(mapStateToProps, null)(Dashboard);
