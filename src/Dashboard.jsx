@@ -276,6 +276,71 @@ class Dashboard extends Component {
             name: "Airplane at airport 30",
             image:
               "https://www2.arccorp.com/globalassets/imageMaker/airplanes/30.jpg"
+          },
+          {
+            name: "Airplane at airport 31",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/31.jpg"
+          },
+          {
+            name: "Airplane at airport 32",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/32.jpg"
+          },
+          {
+            name: "Airplane at airport 33",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/33.jpg"
+          },
+          {
+            name: "Airplane at airport 34",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/34.jpg"
+          },
+          {
+            name: "Airplane at airport 35",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/35.jpg"
+          },
+          {
+            name: "Airplane at airport 36",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/36.jpg"
+          },
+          {
+            name: "Airplane at airport 37",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/37.jpg"
+          },
+          {
+            name: "Airplane at airport 38",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/38.jpg"
+          },
+          {
+            name: "Airplane at airport 39",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/39.jpg"
+          },
+          {
+            name: "Airplane at airport 40",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/40.jpg"
+          },
+          {
+            name: "Airplane at airport 41",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/41.jpg"
+          },
+          {
+            name: "Airplane at airport 42",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/42.jpg"
+          },
+          {
+            name: "Airplane at airport 43",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/airplanes/43.jpg"
           }
         ],
         arc: [
@@ -409,6 +474,46 @@ class Dashboard extends Component {
             name: "Lobby - Luggage",
             image:
               "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-25.jpg"
+          },
+          {
+            name: "People Co-working",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-26.jpg"
+          },
+          {
+            name: "Rainbow Parachute - Pride",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-27.jpg"
+          },
+          {
+            name: "Monitor with code",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-28.jpg"
+          },
+          {
+            name: "Airport Hallway - Luggage",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-29.jpg"
+          },
+          {
+            name: "Bulletin - Luggage",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-30.jpg"
+          },
+          {
+            name: "Above the Clouds",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-31.jpg"
+          },
+          {
+            name: "Man on Flight",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-32.jpg"
+          },
+          {
+            name: "Sunlight and Clouds",
+            image:
+              "https://www2.arccorp.com/globalassets/imagemaker/hr/imagemaker-hr-33.jpg"
           }
         ],
         technology: [
