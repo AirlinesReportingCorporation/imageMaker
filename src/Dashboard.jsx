@@ -939,6 +939,66 @@ class Dashboard extends Component {
                   <div className="dashboardControlsTop">
                     <Form>
                       <div className="row">
+                      <div className="col-md-6">
+                          <Form.Group controlId="exampleForm.ControlSelect2">
+                            <Form.Label>Template</Form.Label>
+                            <Form.Control
+                              style={{ marginBottom: "10px" }}
+                              size="sm"
+                              as="select"
+                              onChange={this.setTemplate.bind(
+                                this,
+                                "Marketing"
+                              )}
+                            >
+                              <option>Choose Template</option>
+                              {templatesMarketing.map(function(item, i) {
+                                return (
+                                  <option key={i} value={i}>
+                                    {templatesMarketing[i].name}
+                                  </option>
+                                );
+                              })}
+                            </Form.Control>
+
+                            <Form.Control
+                              size="sm"
+                              as="select"
+                              onChange={this.templateSizeUpdate}
+                            >
+                              <option value="Twitter">
+                                Twitter (1250x650)
+                              </option>
+                              <option value="Facebook">
+                                Facebook (960x720)
+                              </option>
+                              <option value="YouTube">
+                                YouTube (1280x720)
+                              </option>
+                              <option value="LinkedIn">
+                                LinkedIn (1024x539)
+                              </option>
+                            </Form.Control>
+                          </Form.Group>
+
+                          <Form inline>
+                            <Form.Label className="mr-2">Size</Form.Label>
+                            <Form.Control
+                              size="sm"
+                              type="text"
+                              className="sizeSelect"
+                              value={this.state.imageBoxStyle.width}
+                              onChange={this.bgSelectProp.bind(this, "width")}
+                            />
+                            <Form.Control
+                              size="sm"
+                              type="text"
+                              className="sizeSelect"
+                              value={this.state.imageBoxStyle.height}
+                              onChange={this.bgSelectProp.bind(this, "height")}
+                            />
+                          </Form>
+                        </div>
                         <div className="col-md-4">
                           <Form.Group controlId="exampleForm.ControlSelect1">
                             <Form.Label>Background Image</Form.Label>
@@ -1017,66 +1077,7 @@ class Dashboard extends Component {
                             />
                           </div>
                         </div>
-                        <div className="col-md-6">
-                          <Form.Group controlId="exampleForm.ControlSelect2">
-                            <Form.Label>Template</Form.Label>
-                            <Form.Control
-                              style={{ marginBottom: "10px" }}
-                              size="sm"
-                              as="select"
-                              onChange={this.setTemplate.bind(
-                                this,
-                                "Marketing"
-                              )}
-                            >
-                              <option>Choose Template</option>
-                              {templatesMarketing.map(function(item, i) {
-                                return (
-                                  <option key={i} value={i}>
-                                    {templatesMarketing[i].name}
-                                  </option>
-                                );
-                              })}
-                            </Form.Control>
-
-                            <Form.Control
-                              size="sm"
-                              as="select"
-                              onChange={this.templateSizeUpdate}
-                            >
-                              <option value="Twitter">
-                                Twitter (1250x650)
-                              </option>
-                              <option value="Facebook">
-                                Facebook (960x720)
-                              </option>
-                              <option value="YouTube">
-                                YouTube (1280x720)
-                              </option>
-                              <option value="LinkedIn">
-                                LinkedIn (1024x539)
-                              </option>
-                            </Form.Control>
-                          </Form.Group>
-
-                          <Form inline>
-                            <Form.Label className="mr-2">Size</Form.Label>
-                            <Form.Control
-                              size="sm"
-                              type="text"
-                              className="sizeSelect"
-                              value={this.state.imageBoxStyle.width}
-                              onChange={this.bgSelectProp.bind(this, "width")}
-                            />
-                            <Form.Control
-                              size="sm"
-                              type="text"
-                              className="sizeSelect"
-                              value={this.state.imageBoxStyle.height}
-                              onChange={this.bgSelectProp.bind(this, "height")}
-                            />
-                          </Form>
-                        </div>
+                        
                       </div>
                     </Form>
                   </div>
