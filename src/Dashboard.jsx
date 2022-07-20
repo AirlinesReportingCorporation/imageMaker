@@ -1105,7 +1105,7 @@ class Dashboard extends Component {
                 >
                   <Dropdown.Item href="#/Content">Content</Dropdown.Item>
                   <Dropdown.Item href="#/Styles">Styles</Dropdown.Item>
-                  <Dropdown.Item href="#/Logo">Logo</Dropdown.Item>
+                  {/* <Dropdown.Item href="#/Logo">Logo</Dropdown.Item> */}
                 </DropdownButton>
 
                 <div className="settingsSection">
@@ -1113,6 +1113,7 @@ class Dashboard extends Component {
                     <div>
                       {this.state.textContent.map((data, i) => {
                         return (
+                          <div>
                           <div style={{ marginBottom: "15px" }} key={i}>
                             <Form.Label>Text {i + 1}</Form.Label>
                             <Form.Control
@@ -1245,6 +1246,62 @@ class Dashboard extends Component {
                               </div>
                             </Form>
                           </div>
+                          <hr></hr>
+                          <div>
+                          <Form.Label>Logo Color</Form.Label>
+                          <Form.Control
+                            size="sm"
+                            as="select"
+                            className=""
+                            value={this.state.arcLogoStyle.color}
+                            onChange={this.arcLogoStyleChange.bind(this, "color")}
+                          >
+                            <option value="white">White</option>
+                            <option value="teal">ARC Teal</option>
+                            <option value="black">Black</option>
+                            <option value="gray">Gray</option>
+                          </Form.Control>
+    
+                          <Form.Label>Position</Form.Label>
+                          <Form.Control
+                            size="sm"
+                            as="select"
+                            className=""
+                            value={this.state.arcLogoStyle.position}
+                            onChange={this.arcLogoStyleChange.bind(
+                              this,
+                              "position"
+                            )}
+                          >
+                            <option value="bottom right">Bottom Right</option>
+                            <option value="bottom left">Bottom Left</option>
+                            <option value="top right">Top Right</option>
+                            <option value="top left">Top Left</option>
+                          </Form.Control>
+    
+                          <Form.Label>Size</Form.Label>
+                          <Form.Control
+                            size="sm"
+                            as="select"
+                            className=""
+                            value={this.state.arcLogoStyle.size}
+                            onChange={this.arcLogoStyleChange.bind(this, "size")}
+                          >
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                          </Form.Control>
+    
+                          <Form.Label className="mt-2">Logo Padding</Form.Label>
+                          <Form.Control
+                            size="sm"
+                            type="text"
+                            className=""
+                            value={this.state.arcLogoStyle.padding}
+                            onChange={this.arcLogoStyleChange.bind(this, "padding")}
+                          />
+                        </div>
+                        </div>
                         );
                       })}
                     </div>
@@ -1483,62 +1540,9 @@ class Dashboard extends Component {
                       </Form.Control>
                     </div>
                   )}
-                  {this.state.settingsMenu === "Logo" && (
-                    <div>
-                      <Form.Label>Logo Color</Form.Label>
-                      <Form.Control
-                        size="sm"
-                        as="select"
-                        className=""
-                        value={this.state.arcLogoStyle.color}
-                        onChange={this.arcLogoStyleChange.bind(this, "color")}
-                      >
-                        <option value="white">White</option>
-                        <option value="teal">ARC Teal</option>
-                        <option value="black">Black</option>
-                        <option value="gray">Gray</option>
-                      </Form.Control>
-
-                      <Form.Label>Position</Form.Label>
-                      <Form.Control
-                        size="sm"
-                        as="select"
-                        className=""
-                        value={this.state.arcLogoStyle.position}
-                        onChange={this.arcLogoStyleChange.bind(
-                          this,
-                          "position"
-                        )}
-                      >
-                        <option value="bottom right">Bottom Right</option>
-                        <option value="bottom left">Bottom Left</option>
-                        <option value="top right">Top Right</option>
-                        <option value="top left">Top Left</option>
-                      </Form.Control>
-
-                      <Form.Label>Size</Form.Label>
-                      <Form.Control
-                        size="sm"
-                        as="select"
-                        className=""
-                        value={this.state.arcLogoStyle.size}
-                        onChange={this.arcLogoStyleChange.bind(this, "size")}
-                      >
-                        <option value="s">Small</option>
-                        <option value="m">Medium</option>
-                        <option value="l">Large</option>
-                      </Form.Control>
-
-                      <Form.Label className="mt-2">Logo Padding</Form.Label>
-                      <Form.Control
-                        size="sm"
-                        type="text"
-                        className=""
-                        value={this.state.arcLogoStyle.padding}
-                        onChange={this.arcLogoStyleChange.bind(this, "padding")}
-                      />
-                    </div>
-                  )}
+                  {/* {this.state.settingsMenu === "Logo" && (
+                    
+                  )} */}
                 </div>
               </div>
             </div>
