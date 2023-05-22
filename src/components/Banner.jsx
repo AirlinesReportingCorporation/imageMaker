@@ -44,26 +44,6 @@ class Banner extends Component {
           className={"imageBox " + (this.props.unZoom == true ? "unZoom" : "")}
           style={this.props.imageBoxStyle}
         >
-          <div
-            className="arcLogoImage"
-            style={Object.assign(
-              {
-                display: this.props.arcLogoStyle.show,
-                padding: this.props.arcLogoStyle.padding
-              },
-              setLogoPosition(t.props.arcLogoStyle.position)
-            )}
-          >
-            <img
-              src={
-                "https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-" +
-                this.props.arcLogoStyle.size +
-                "-" +
-                this.props.arcLogoStyle.color +
-                ".png"
-              }
-            />
-          </div>
           <div className="textBox" style={this.props.textBoxStyle}>
             <div
               className={
@@ -79,6 +59,11 @@ class Banner extends Component {
                   return (
                     <div key={i} style={data.style}>
                       <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
                         dangerouslySetInnerHTML={{ __html: data.text }}
                       ></div>
                     </div>
@@ -94,12 +79,12 @@ class Banner extends Component {
 
 const mapDispatchToProps = {
   voteAngular,
-  setLoginType
+  setLoginType,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   angular: state.angular,
-  loginType: state.loginType
+  loginType: state.loginType,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);
