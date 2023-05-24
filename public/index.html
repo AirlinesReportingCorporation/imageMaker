@@ -28,9 +28,10 @@
       rel="stylesheet"
       href="https://www2.arccorp.com/globalassets/static/style.css?982378423984723"
     />
+
     <link
       rel="stylesheet"
-      href="https://www2.arccorp.com/globalassets/style/main.min.css?262d342133e24290"
+      href="https://arccorp-script-test.netlify.app/main.min.css"
     />
 
     <style>
@@ -50,124 +51,16 @@
       }
     </style>
 
-    <link rel="stylesheet" href="imageMaker.min.css" />
+    <link rel="stylesheet" href="arc-airportis.min.css" />
   </head>
 
   <body class=" 10298">
     <div class="navcontainer signedOut" data-username="">
       <!-- supernav start -->
       <div class="supernav" v-on:mouseleave="navPanelReset()">
-        <!-- start topnav -->
-        <div
-          class="supernav-topnav"
-          v-click-outside="hideLogin"
-          v-on:mouseenter="navPanelReset()"
-        >
-          <div class="supernav-topnav-inner">
-            <form
-              class="topnav-search"
-              action="/search/"
-              method="get"
-              v-show="showSearch"
-              v-cloak
-            >
-              <input
-                type="text"
-                name="q"
-                id="topnav-search-input"
-                ref="search"
-                v-cloak
-              />
-              <div class="icon-close" v-on:click="toggleSearch()" v-cloak></div>
-              <button
-                type="submit"
-                class="icon-search"
-                id="topnav-search-button"
-                value="submit"
-              ></button>
-            </form>
-            <a
-              href="#"
-              class="topnav-link show-search icon-search"
-              v-on:click="toggleSearch()"
-              v-show="!showSearch"
-            ></a>
-            <a href="/about-us/contact-us/" class="topnav-link">Contact Us</a>
-            <a
-              href="#"
-              class="topnav-link topnav-myarc"
-              v-on:click="showPopup('loginActive')"
-              >My ARC</a
-            >
-            <div class="supernav-login" v-show="loginActive" v-cloak>
-              <div class="supernav-login-inner">
-                <div class="supernav-loggedin">
-                  You are currently logged in as
-                  <div class="supernav-myarc-username"></div>
-                  <a
-                    target="_blank"
-                    href="https://intgmyarc.arccorp.com/"
-                    class="ctaBtn"
-                    >My ARC</a
-                  >
-                  <a
-                    target="_blank"
-                    href="https://intgmyarc.arccorp.com/PortalApp/ARCGateway.portal?_nfpb=true&_st=&_pageLabel=ARC_Login&_name=logout&_nfls=false"
-                    class="ctaBtn"
-                    >Log Out</a
-                  >
-                </div>
-                <form
-                  id="frmMyARCLogin"
-                  name="frmMyARCLogin"
-                  method="POST"
-                  action="https://intgmyarc.arccorp.com/PortalApp/PreLogin.portal"
-                >
-                  <input
-                    type="text"
-                    id="myarcusername"
-                    name="user"
-                    placeholder="Username"
-                  />
-
-                  <input
-                    type="password"
-                    id="myarcpassword"
-                    name="password"
-                    placeholder="Password"
-                  />
-                  <div class="supernav-submit">
-                    <button
-                      title="submit form"
-                      class="ctaBtn ctaBtn--main"
-                      type="submit"
-                    >
-                      Log In
-                    </button>
-                  </div>
-                  <br />
-                  <a
-                    href="https://myarc.arccorp.com/PortalApp/ArcPublicPortal.portal?_nfpb=true&_pageLabel=MyARC_ForgotUserName&_nfls=false"
-                    target="_blank"
-                    class="forgotUsername"
-                    >Forgot Username?</a
-                  >
-                  <a
-                    href="https://myarc.arccorp.com/PortalApp/ArcPublicPortal.portal?_nfpb=true&_pageLabel=ARC_ForgotPassword&_nfls=false"
-                    target="_blank"
-                    class="forgotUsername"
-                    >Forgot Password?</a
-                  >
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end top nav -->
-
         <!-- start menu nav -->
         <div style="position: relative; z-index: 104; background: #ffffff;">
-          <div class="supernav-inner">
+          <div class="supernav-inner d-flex align-items-center">
             <div class="supernav-mobile-icon">
               <div class="hamburger icon-menu"></div>
             </div>
@@ -183,18 +76,18 @@
                   <a
                     href="#"
                     class="supernav-menu-item"
-                    v-on:click="navPanelSwitch('products')"
+                    v-on:click="navPanelSwitch('participation')"
                   >
-                    Products
+                    Participation
                   </a>
                 </div>
                 <div class="col">
                   <a
                     href="#"
                     class="supernav-menu-item"
-                    v-on:click="navPanelSwitch('participation')"
+                    v-on:click="navPanelSwitch('products')"
                   >
-                    Participation
+                    Products
                   </a>
                 </div>
                 <div class="col">
@@ -242,21 +135,22 @@
                 <a
                   href="#"
                   class="supernav-menu-item"
-                  v-bind:class="{ active : primaryNavCheck('products') }"
-                  v-on:mouseover="navPanelSwitch('products')"
-                  v-on:click="navPanelSwitch('products')"
-                >
-                  Products
-                </a>
-                <a
-                  href="#"
-                  class="supernav-menu-item"
                   v-bind:class="{ active : primaryNavCheck('participation') }"
                   v-on:mouseover="navPanelSwitch('participation')"
                   v-on:click="navPanelSwitch('participation')"
                 >
                   Participation
                 </a>
+                <a
+                  href="#"
+                  class="supernav-menu-item"
+                  v-bind:class="{ active : primaryNavCheck('products') }"
+                  v-on:mouseover="navPanelSwitch('products')"
+                  v-on:click="navPanelSwitch('products')"
+                >
+                  Products
+                </a>
+
                 <a
                   href="#"
                   class="supernav-menu-item"
@@ -295,6 +189,125 @@
                 </a>
               </div>
             </div>
+            <div v-cloak class="supernav-utility">
+              <!-- start topnav -->
+              <div
+                class="supernav-topnav"
+                v-click-outside="hideLogin"
+                v-on:mouseenter="navPanelReset()"
+              >
+                <div class="supernav-topnav-inner">
+                  <form
+                    class="topnav-search"
+                    action="/search/"
+                    method="get"
+                    v-show="showSearch"
+                    v-cloak
+                  >
+                    <input
+                      title="topnavsearch"
+                      type="text"
+                      name="q"
+                      id="topnav-search-input"
+                      ref="search"
+                      placeholder="Search"
+                      v-cloak
+                    />
+                    <div
+                      class="icon-close"
+                      v-on:click="toggleSearch()"
+                      v-cloak
+                    ></div>
+                    <button
+                      type="submit"
+                      class="icon-search"
+                      id="topnav-search-button"
+                      value="submit"
+                    ></button>
+                  </form>
+                  <a
+                    href="#"
+                    class="topnav-link show-search icon-search"
+                    v-on:click="toggleSearch()"
+                    v-show="!showSearch"
+                  ></a>
+                  <a href="/about-us/contact-us/" class="topnav-link"
+                    >Contact Us</a
+                  >
+                  <a
+                    href="#"
+                    class="topnav-link topnav-myarc"
+                    v-on:click="showPopup('loginActive')"
+                    >My ARC</a
+                  >
+                  <div class="supernav-login" v-show="loginActive" v-cloak>
+                    <div class="supernav-login-inner">
+                      <div class="supernav-loggedin">
+                        You are currently logged in as
+                        <div class="supernav-myarc-username"></div>
+                        <a
+                          target="_blank"
+                          href="https://myarc.arccorp.com/"
+                          class="ctaBtn"
+                          >My ARC</a
+                        >
+                        <a
+                          target="_blank"
+                          href="https://myarc.arccorp.com/PortalApp/ARCGateway.portal?_nfpb=true&_st=&_pageLabel=ARC_Login&_name=logout&_nfls=false"
+                          class="ctaBtn"
+                          >Log Out</a
+                        >
+                      </div>
+                      <form
+                        id="frmMyARCLogin"
+                        name="frmMyARCLogin"
+                        method="POST"
+                        action="https://myarc.arccorp.com/PortalApp/PreLogin.portal"
+                      >
+                        <input
+                          type="text"
+                          id="myarcusername"
+                          name="user"
+                          placeholder="Username"
+                          title="username"
+                        />
+
+                        <input
+                          type="password"
+                          id="myarcpassword"
+                          name="password"
+                          placeholder="Password"
+                          title="password"
+                        />
+                        <div class="supernav-submit">
+                          <button
+                            title="submit form"
+                            class="ctaBtn ctaBtn--main"
+                            type="submit"
+                          >
+                            Log In
+                          </button>
+                        </div>
+                        <br />
+                        <a
+                          href="https://myarc.arccorp.com/PortalApp/ArcPublicPortal.portal?_nfpb=true&_pageLabel=MyARC_ForgotUserName&_nfls=false"
+                          target="_blank"
+                          class="forgotUsername"
+                          >Forgot Username?</a
+                        >
+                        <a
+                          href="https://myarc.arccorp.com/PortalApp/ArcPublicPortal.portal?_nfpb=true&_pageLabel=ARC_ForgotPassword&_nfls=false"
+                          target="_blank"
+                          class="forgotUsername"
+                          >Forgot Password?</a
+                        >
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end top nav -->
+            </div>
           </div>
         </div>
         <!-- end menu nav -->
@@ -319,7 +332,7 @@
           <div class="supernav-sub-inner row">
             <div class="supernav-sub-main col-md-3">
               <a
-                href="/products-participation/products/?link=agencies&utm_source=Global_Navigation"
+                href="https://www2.arccorp.com/products-participation/travel-agencies/?utm_source=Global_Navigation"
                 class="supernav-header"
               >
                 Travel Agencies
@@ -340,9 +353,9 @@
                 >Memo Analyzer for Agencies</a
               >
               <a
-                href="/products-participation/products/memo-manager/?utm_source=Global_Navigation"
+                href="/products-participation/products/arc-custom-reports/?utm_source=Global_Navigation"
                 class="supernav-sub-link"
-                >Memo Manager</a
+                >Custom Reports</a
               >
 
               <a
@@ -353,7 +366,7 @@
             </div>
             <div class="supernav-sub-main col-md-3">
               <a
-                href="/products-participation/products/?link=airlines&utm_source=Global_Navigation"
+                href="https://www2.arccorp.com/products-participation/airlines/?utm_source=Global_Navigation"
                 class="supernav-header"
                 >Airlines</a
               >
@@ -388,36 +401,14 @@
             </div>
             <div class="supernav-sub-main col-md-3">
               <a
-                href="/products-participation/products/?link=corporations&utm_source=Global_Navigation"
-                class="supernav-header"
-                >Corporate Travel Programs</a
-              >
-              <a
-                href="/products-participation/products/air-program-monitor/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Air Program Monitor</a
-              >
-              <a
-                href="/products-participation/products/corporate-bi/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Corporate BI</a
-              >
-              <a
-                href="/products-participation/products/transaction-history-file/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Transaction History File</a
-              >
-              <a
-                href="/products-participation/products/?link=corporations&utm_source=Global_Navigation"
-                class="supernav-sub-link supernav-viewall"
-                >View All</a
-              >
-            </div>
-            <div class="supernav-sub-main col-md-3">
-              <a
-                href="/products-participation/products/?link=other&utm_source=Global_Navigation"
+                href="https://www2.arccorp.com/products-participation/other-data-users/?utm_source=Global_Navigation"
                 class="supernav-header"
                 >Other Data Users</a
+              >
+              <a
+                href="/products-participation/products/arc-travel-demand/?utm_source=Global_Navigation&utm_campaign=Other_Data_Users"
+                class="supernav-sub-link"
+                >ARC Travel Demand</a
               >
               <a
                 href="/products-participation/products/arc-custom-reports/?utm_source=Global_Navigation&utm_campaign=Other_Data_Users"
@@ -451,7 +442,7 @@
           <div class="supernav-sub-inner row">
             <div class="supernav-sub-main col-md-3">
               <div class="supernav-header supernav-header-nonlink">
-                Distribution
+                Air Travel Retailing
               </div>
               <a
                 href="/products-participation/distribution/?utm_source=Global_Navigation"
@@ -460,24 +451,14 @@
                 >New Distribution Capability (NDC)</a
               >
               <a
+                href="/about-us/arc-omnichannel-retailing/?utm_source=Global_Navigation"
+                class="supernav-header"
+                >Omnichannel Retailing</a
+              >
+              <a
                 href="/about-us/settlement-services/?utm_source=Global_Navigation"
                 class="supernav-header"
                 >Settlement</a
-              >
-              <a
-                href="/products-participation/travel-agencies/agency-participation/participation-products/DRS/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Document Retrieval Service (DRS)</a
-              >
-              <a
-                href="/products-participation/travel-agencies/agency-participation/participation-products/IAR/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Interactive Agent Reporting (IAR)</a
-              >
-              <a
-                href="/products-participation/travel-agencies/agency-participation/participation-products/ISS/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Internet Sales Summary (ISS)</a
               >
             </div>
             <div class="supernav-sub-main col-3">
@@ -485,12 +466,17 @@
                 class="supernav-header supernav-header-nonlink"
                 style="margin-bottom:15px;"
               >
-                Payment
+                Payment and Fraud Services
               </div>
               <a
-                href="/products-participation/products/travel-agency-service-fee/?utm_source=Global_Navigation"
+                href="/products-participation/products/arc-pay/?utm_source=Global_Navigation"
                 class="supernav-sub-link"
-                >Travel Agency Service Fee (TASF)</a
+                >ARC Pay</a
+              >
+              <a
+                href="/support-training/fraud-prevention/arc-risk-check/?utm_source=Global_Navigation"
+                class="supernav-sub-link"
+                >ARC Risk Check</a
               >
             </div>
             <div class="supernav-sub-main col-3">
@@ -531,20 +517,6 @@
           </div>
 
           <!-- bottom featured product section-->
-          <!--
-        <div style="background: #ece9e7; margin-top: 30px; padding: 30px 0;">
-        <div class="supernav-sub-inner row">
-          <div class="supernav-sub-main col-md-3">
-            img
-          </div>
-          <div class="supernav-sub-main col-md-9">
-            <a href="/articles-trends/sales-statistics/" class="supernav-header">
-              Case Studies
-            </a>
-          </div>
-        </div>
-      </div>
-      -->
         </div>
 
         <!-- participation sub nav -->
@@ -657,10 +629,10 @@
                       class="supernav-participation-stats"
                       style="color: #333333;"
                     >
-                      Emerging Models <br />for NDC
+                      Omnichannel Retailing
                     </div>
                     <a
-                      href="/articles-trends/the-latest/navigating-one-to-one-relationships-in-a-many-to-many-airline-distribution-world/?utm_source=Global_Navigation"
+                      href="/about-us/arc-omnichannel-retailing/?utm_source=Navigation_Feature"
                       class="supernav-header"
                       >Learn More</a
                     >
@@ -668,18 +640,6 @@
                       src="https://www2.arccorp.com/globalassets/homepage/redesign/participation_feature4.png"
                       alt="participation"
                     />
-                    <!--
-                <div style="padding-left:15px;">
-                  <div class="supernav-participation-title">
-                    Preparing for Takeoff 2016
-                  </div>
-                  <div class="supernav-participation-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </div>
-                  <div class="supernav-header">
-                    Call to Action
-                  </div>
-                </div>-->
                   </div>
                 </div>
               </div>
@@ -687,7 +647,7 @@
           </div>
         </div>
 
-        <!-- community sub nav -->
+        <!-- communication sub nav -->
 
         <div
           class="supernav-sub animated"
@@ -695,129 +655,134 @@
           v-show="primaryNav === 'community'"
           v-cloak
         >
-          <div class="supernav-sub-inner row">
-            <div class="supernav-sub-main col-md-3">
-              <a
-                href="/articles-trends/the-latest/?utm_source=Global_Navigation"
-                class="supernav-header"
-                >The Latest</a
-              >
-              <a
-                href="/about-us/newsroom/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Newsroom</a
-              >
-              <a
-                href="/articles-trends/the-latest/?link=researchThoughtLeadership&utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Research & Thought Leadership</a
-              >
-              <a
-                href="/articles-trends/the-latest/?link=webinars&utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >On-Demand Webinars</a
-              >
-              <a
-                href="/articles-trends/the-latest/?link=caseStudies&utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Case Studies</a
-              >
-              <a
-                href="/products-participation/customer-success-stories/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Customer Success Stories</a
-              >
+          <div class="row no-gutters" style="max-width: 100%">
+            <div class="col-6">
+              <div class="supernav-sub-container supernav-sub-container-right">
+                <div class="row justify-content-end">
+                  <div class="supernav-sub-main col-md-6">
+                    <a
+                      href="/articles-trends/the-latest/?utm_source=Global_Navigation"
+                      class="supernav-header"
+                      >The Latest</a
+                    >
+                    <a
+                      href="/about-us/newsroom/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Newsroom</a
+                    >
+                    <a
+                      href="/articles-trends/blog/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Blog</a
+                    >
+                    <a
+                      href="/about-us/newsroom/media-kit/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Media Kit</a
+                    >
+                    <a
+                      href="/articles-trends/on-demand-webinars/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >On-Demand Webinars</a
+                    >
+                    <a
+                      href="/articles-trends/case-studies/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Case Studies</a
+                    >
+                    <a
+                      href="/products-participation/customer-success-stories/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Customer Success Stories</a
+                    >
 
-              <a
-                href="/about-us/events/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Events</a
-              >
+                    <a
+                      href="/about-us/events/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Events</a
+                    >
+                  </div>
+                  <div class="supernav-sub-main col-md-6">
+                    <a
+                      href="/articles-trends/industry-communications/?utm_source=Global_Navigation"
+                      class="supernav-header"
+                    >
+                      Industry Communications
+                    </a>
+                    <a
+                      href="/articles-trends/arc-newsletter/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >ARC Newsletter</a
+                    >
+                    <a
+                      href="/articles-trends/agency-communications/travel-agent-communications/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Travel Agent Communications (TAC)</a
+                    >
+                    <a
+                      href="/support-training/fraud-prevention/fraud-alerts/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Fraud Alerts</a
+                    >
+                    <a
+                      href="/articles-trends/agency-communications/airline-participation-announcements/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Airline Participation Announcements</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="supernav-sub-main col-md-3">
-              <a
-                href="/articles-trends/agency-communications/?utm_source=Global_Navigation"
-                class="supernav-header"
+            <div class="col-6" style="background: #f6f6f6;">
+              <div
+                class="supernav-sub-container supernav-sub-container-left"
+                style="height:100%"
               >
-                Agency Communications
-              </a>
-              <a
-                href="/articles-trends/agency-communications/agent-newsletter/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Agent Newsletter</a
-              >
-              <a
-                href="/articles-trends/agency-communications/airline-participation-announcements/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Airline Participation Announcements</a
-              >
-              <a
-                href="/support-training/fraud-prevention/fraud-alerts/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Fraud Alerts</a
-              >
-
-              <a
-                href="/articles-trends/agency-communications/travel-agent-communications/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Travel Agent Communications (TAC)</a
-              >
-            </div>
-            <div class="supernav-sub-main col-md-3">
-              <a
-                href="/articles-trends/airline-communications/?utm_source=Global_Navigation"
-                class="supernav-header"
-              >
-                Airline Communications
-              </a>
-              <a
-                href="/articles-trends/airline-communications/airline-newsletter/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Airline Newsletter</a
-              >
-              <a
-                href="/articles-trends/agency-communications/airline-participation-announcements/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Airline Participation Announcements</a
-              >
-              <a
-                href="/support-training/fraud-prevention/fraud-alerts/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Fraud Alerts</a
-              >
-            </div>
-            <div class="supernav-sub-main col-md-3">
-              <a
-                href="/support-training/working-groups/?utm_source=Global_Navigation"
-                class="supernav-header"
-                >Working Groups</a
-              >
-              <a
-                href="/support-training/working-groups/debit-memo-working-group-dmwg/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >Debit Memo Working Group (DMWG)</a
-              >
-              <a
-                href="/support-training/working-groups/arc-payments-forum/?utm_source=Global_Navigation"
-                class="supernav-sub-link"
-                >ARC Payments Forum</a
-              >
+                <div class="row justify-content-end" style="height:100%">
+                  <div
+                    class="supernav-sub-main col-md-6"
+                    style="background: #ffffff;"
+                  >
+                    <a
+                      href="/support-training/working-groups/?utm_source=Global_Navigation"
+                      class="supernav-header"
+                      >Working Groups</a
+                    >
+                    <a
+                      href="/support-training/working-groups/debit-memo-working-group-dmwg/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Debit Memo Working Group (DMWG)</a
+                    >
+                    <a
+                      href="/support-training/working-groups/arc-payments-forum/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >ARC Payments Forum</a
+                    >
+                  </div>
+                  <div
+                    class="supernav-sub-main col-md-6"
+                    style="background: #f6f6f6; text-align:center;"
+                  >
+                    <div
+                      class="supernav-participation-stats"
+                      style="color: #333333;"
+                    >
+                      Customer Success Stories
+                    </div>
+                    <a
+                      href="/products-participation/customer-success-stories/?utm_source=Navigation_Feature"
+                      class="supernav-header"
+                      >Learn More</a
+                    >
+                    <img
+                      src="https://www2.arccorp.com/globalassets/homepage/redesign/communication_feature.png"
+                      alt="Customer Success Stories"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <!--
-        <div style="background: #ece9e7;">
-          <div class="supernav-sub-inner row">
-            <div class="supernav-sub-main col-md-3">
-              img
-            </div>
-            <div class="supernav-sub-main col-md-9">
-              <a href="/articles-trends/sales-statistics/" class="supernav-header">
-                Case Studies
-              </a>
-            </div>
-          </div>
-        </div> -->
         </div>
 
         <!-- training sub nav -->
@@ -891,7 +856,7 @@
                   <div class="supernav-sub-main col-md-6">
                     <div class="supernav-webinar">
                       <a
-                        href="/articles-trends/the-latest/?link=webinars&utm_source=Global_Navigation&utm_campaign=Feature"
+                        href="/articles-trends/on-demand-webinars?utm_source=Navigation_Feature"
                         class="supernav-header no-arrow"
                         >On-Demand Webinars</a
                       >
@@ -900,7 +865,7 @@
                       </div>
 
                       <a
-                        href="/articles-trends/the-latest/?link=webinars&utm_source=Global_Navigation&utm_campaign=Feature"
+                        href="/articles-trends/on-demand-webinars?utm_source=Navigation_Feature"
                         class="supernav-header"
                       >
                         View All
@@ -937,25 +902,36 @@
                     </div>
                     <a
                       target="_blank"
-                      href="https://www2.arccorp.com/globalassets/forms/agencyfees_2018.pdf/?utm_source=Global_Navigation"
+                      href="/globalassets/forms/agencyfees_2020.pdf/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
-                      >2018 ARC Agency Fees</a
+                      >2020 ARC Agency Fees</a
                     >
                     <a
-                      href="/support-training/holiday-schedule/?utm_source=Global_Navigation"
+                      href="/support-training/holiday-schedule-2020/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
-                      >2018 Holiday Schedule</a
+                      >2020 Holiday Schedule</a
+                    >
+                    <a
+                      href="/support-training/2021-holiday-schedule/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >2021 Holiday Schedule</a
                     >
                     <a
                       href="/support-training/airlines/processing-schedule/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
-                      >2018 Processing Schedule</a
+                      >2020 Processing Schedule</a
+                    >
+                    <a
+                      href="/support-training/airlines/2021-processing-schedule/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >2021 Processing Schedule</a
                     >
                     <a
                       href="/support-training/airlines/airline-ticket-matrix/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
                       >Airline Ticket Matrix</a
                     >
+
                     <a
                       href="/support-training/airlines/airline-ancillary-matrix/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
@@ -974,7 +950,7 @@
                     >
                     <a
                       target="_blank"
-                      href="https://www2.arccorp.com/globalassets/forms/exception_transactions.pdf/?utm_source=Global_Navigation"
+                      href="/globalassets/forms/exception_transactions.pdf/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
                       >Exception Transactions</a
                     >
@@ -989,7 +965,11 @@
                     <div class="supernav-header supernav-header-nonlink">
                       Agency Resources
                     </div>
-
+                    <a
+                      href="/refunds/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Airline Refund and Exchange Information
+                    </a>
                     <a
                       href="/support-training/agent-reporting-agreement/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
@@ -999,6 +979,12 @@
                       href="/support-training/industry-agents-handbook/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
                       >Industry Agents' Handbook (IAH)</a
+                    >
+                    <a
+                      target="_blank"
+                      href="/support-training/airlines/payment-acceptance/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >Payment Acceptance Chart</a
                     >
                     <a
                       href="/support-training/forms-catalog-accreditation/?utm_source=Global_Navigation"
@@ -1015,6 +1001,12 @@
                       class="supernav-sub-link"
                       >GDS Contact Information</a
                     >
+                    <a
+                      href="/globalassets/support--training/agency-support/chargeback-best-practices.pdf/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      target="_blank"
+                      >Chargeback Best Practices</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1030,12 +1022,6 @@
                       Airline Resources
                     </div>
 
-                    <a
-                      target="_blank"
-                      href="https://www2.arccorp.com/globalassets/forms/ops/creditcard-acceptance-chart.pdf/?utm_source=Global_Navigation"
-                      class="supernav-sub-link"
-                      >Credit Card Acceptance Chart</a
-                    >
                     <a
                       href="/support-training/airlines/information-on-agency-accreditation-for-airlines/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
@@ -1057,13 +1043,23 @@
                       class="supernav-sub-link"
                       >Participating Airlines</a
                     >
+                    <a
+                      href="https://arcsign.na1.echosign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhCE6LyrFDQdByivyHHE1eTmEOZtFPDRbT1fRMpQPWgIZn-CKp_z1sWfG-Koef8Ns48*"
+                      class="supernav-sub-link"
+                      target="_blank"
+                      >Re-designation form for Airlines</a
+                    >
                     <br /><br /><br />
                   </div>
                   <div class="supernav-sub-main col-md-6">
                     <div class="supernav-header supernav-header-nonlink">
                       Fraud Prevention Resources
                     </div>
-
+                    <a
+                      href="/support-training/fraud-prevention/arc-risk-check/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      >ARC Risk Check</a
+                    >
                     <a
                       href="/support-training/fraud-prevention/best-practices/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
@@ -1085,6 +1081,11 @@
                       >Fraud Prevention</a
                     >
                     <a
+                      href="/support-training/fraud-prevention/fraud-on-demand-webinars/"
+                      class="supernav-sub-link"
+                      >Fraud Prevention On-Demand Webinars</a
+                    >
+                    <a
                       href="/support-training/fraud-prevention/free-internet-tools/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
                       >Free Internet Tools</a
@@ -1099,17 +1100,23 @@
                       class="supernav-sub-link"
                       >Schemes</a
                     >
+                    <a
+                      href="/globalassets/support--training/agency-support/chargeback-best-practices.pdf/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                      target="_blank"
+                      >Chargeback Best Practices</a
+                    >
 
                     <!-- <div class="supernav-contact">
-                      <div class="supernav-contact-title">
-                        Help
-                      </div>
-                      <a href="/about-us/contact-us/" class="supernav-header">
-                        Contact Us
-                      </a>
-
-                    </div>
-                    <img class="contact-image" src="https://www2.arccorp.com/globalassets/homepage/redesign/support.png" alt="Support"> -->
+                            <div class="supernav-contact-title">
+                              Help
+                            </div>
+                            <a href="/about-us/contact-us/" class="supernav-header">
+                              Contact Us
+                            </a>
+  
+                          </div>
+                          <img class="contact-image" src="https://www2.arccorp.com/globalassets/homepage/redesign/support.png" alt="Support"> -->
                   </div>
                 </div>
               </div>
@@ -1168,7 +1175,7 @@
                       Airline Sales Statistics
                     </a>
                     <a
-                      href="/about-us/our-data/?utm_source=Global_Navigation"
+                      href="/about-us/arc-data/?utm_source=Global_Navigation"
                       class="supernav-sub-link"
                       >Our Data</a
                     >
@@ -1194,6 +1201,18 @@
                     >
                       Careers
                     </a>
+                    <a
+                      href="/about-us/careers/benefits/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                    >
+                      Benefits & Perks
+                    </a>
+                    <a
+                      href="/about-us/careers/our-culture/?utm_source=Global_Navigation"
+                      class="supernav-sub-link"
+                    >
+                      Our Culture
+                    </a>
                   </div>
                   <div class="supernav-sub-main col-md-6">
                     <div class="supernav-story">
@@ -1206,12 +1225,18 @@
                       >
                         Contact Us
                       </a>
+                      <a
+                        href="/about-us/newsroom/media-kit/?utm_source=Global_Navigation"
+                        class="supernav-sub-link"
+                      >
+                        Media Kit
+                      </a>
                     </div>
                   </div>
                   <!--
-                  <div class="supernav-sub-main col-md-3">
-                    <img src="https://www2.arccorp.com/globalassets/homepage/redesign/story.png" alt="Careers">
-                  </div>-->
+                        <div class="supernav-sub-main col-md-3">
+                          <img src="https://www2.arccorp.com/globalassets/homepage/redesign/story.png" alt="Careers">
+                        </div>-->
                 </div>
               </div>
             </div>
@@ -1228,830 +1253,15 @@
       data-section="data-panel"
     >
       <div class="background">
-        <!-- Image Maker Start -->
-        <div v-cloak class="imageMaker">
-          <div class="imageTopMenu">
-            <div class="row align-items-center">
-              <div class="col-lg-1">
-                <img
-                  src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-teal.png"
-                  alt="ARC Logo"
-                />
-              </div>
-              <div class="col-lg-3">
-                <div class="input-group input-group-lg mb-0">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01"
-                      ><i class="far fa-file-alt  d-flex align-items-center"></i
-                    ></label>
-                  </div>
-                  <select
-                    class="custom-select"
-                    id="inputGroupSelect01"
-                    v-on:change="setCurrentTemplate($event)"
-                  >
-                    <option
-                      v-for="template in templates"
-                      v-bind:value="template.name"
-                      >{{template.name}}</option
-                    >
-                  </select>
-                </div>
-              </div>
-              <div class="col-lg-5">
-                <div
-                  class="input-group input-group-lg mb-0 d-flex align-items-center"
-                >
-                  <div class="input-group-prepend">
-                    <label
-                      class="input-group-text"
-                      for="inputGroupSelect02-test"
-                      ><i class="fas fa-image d-flex align-items-center"></i
-                    ></label>
-                  </div>
-                  <select
-                    v-model="background"
-                    class="custom-select"
-                    id="inputGroupSelect02-test"
-                    placeholder=""
-                  >
-                    <optgroup label="ARC">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/about-us/careers/carrers-jumbo2.jpg"
-                        >ARC People 1</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/about-us/careers/jumbotronstandardculture.jpg"
-                        >ARC People 2</option
-                      >
-                    </optgroup>
-                    <optgroup label="Stock People">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/GettyImages-554391989.jpg"
-                        >Collaboration 1</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/GettyImages-687920320.jpg"
-                        >Collaboration 2</option
-                      >
-                      <option
-                        value="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                        >Two Developers (Man and Woman)</option
-                      >
-                      <option
-                        value="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        >Two Women on Laptop</option
-                      >
-                      <option
-                        value="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                        >Team Meeting w/ Sticky Notes</option
-                      >
-                      <option
-                        value="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                        >Team Coworkers</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel12.jpg"
-                        >Man Drawing on Computer</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg"
-                        >Girl with Credit Card</option
-                      >
-                    </optgroup>
-
-                    <optgroup label="GBTA">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/artur-tumasjan-KZSNMN4VxR8-unsplash.jpg"
-                        >Airport</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/becca-tapert-QofjUnxy9LY-unsplash.jpg"
-                        >Girl on Phone</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg"
-                        >Clouds</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/dynamic-wang-fPzTfEauDls-unsplash.jpg"
-                        >Airplane on tarmac</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/fabio-oyXis2kALVg-unsplash.jpg"
-                        >Digital Cubes</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg"
-                        >Computer Typing</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/nasa-Q1p7bh3SHj8-unsplash.jpg"
-                        >Globe digital</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/nina-z-VKg1oXU-vzo-unsplash.jpg"
-                        >Data Lines</option
-                      >
-                    </optgroup>
-
-                    <optgroup label="Airplanes">
-                      <option
-                        v-for="n in 40"
-                        v-bind:value="'https://www2.arccorp.com/globalassets/imageMaker/airplanes/' + n + '.jpg'"
-                        >Airplane Stock {{n}}</option
-                      >
-                    </optgroup>
-
-                    <optgroup label="Technology">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imageMaker/GettyImages-860310256.jpg"
-                        >Computer Typing 1</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imageMaker/GettyImages-864246666.jpg"
-                        >Computer Typing 2</option
-                      >
-                    </optgroup>
-
-                    <optgroup label="Data">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg"
-                        >Data Grid</option
-                      >
-                      <option
-                        value="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-                        >Overhead North America</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/products--participation/products/odss/jumbotronstandard_1400x483_odss.jpg"
-                        >Data points connected</option
-                      >
-                    </optgroup>
-
-                    <optgroup label="Products">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/imagemaker/customreports_ad_image_tw.png"
-                        >Custom Reports</option
-                      >
-                    </optgroup>
-
-                    <optgroup label="Misc">
-                      <option
-                        value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel14.jpg"
-                        >Overhead Topography</option
-                      >
-                      <option
-                        value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel16.jpg"
-                        >Mobile Phone</option
-                      >
-                      <option
-                        value="https://images.unsplash.com/photo-1454496406107-dc34337da8d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-                        >Passport</option
-                      >
-                    </optgroup>
-                  </select>
-
-                  or
-
-                  <div class="customUpload form-group mb-0 mx-2">
-                    <input
-                      class="form-control-file mb-0"
-                      type="file"
-                      ref="myFiles"
-                      v-on:change="onFileChange($event)"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-1">
-                <div class="btn-group btn-group-sm">
-                  <button
-                    v-on:click="toggleZoom('minus')"
-                    type="button"
-                    class="btn btn-light"
-                  >
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button
-                    v-on:click="toggleZoom('reset')"
-                    type="button"
-                    class="btn btn-light"
-                  >
-                    {{formatZoom}}
-                  </button>
-                  <button
-                    v-on:click="toggleZoom('plus')"
-                    type="button"
-                    class="btn btn-light"
-                  >
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="col-lg-2 text-right">
-                <button v-on:click="saveImage()" class="btn btn-primary">
-                  Save Image
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="row no-gutters">
-            <div class="col image-column-left">
-              <div class="imageMenuContainer">
-                <div class="imageMenu">
-                  <div class="imageMenuLogo">
-                    <img
-                      src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-l-white.png"
-                      alt="Airlines Reporting Corporation"
-                    />
-                  </div>
-
-                  <div class="inputContainer">
-                    <div class="row no-gutters">
-                      <div class="col-12">
-                        <label for="">Template Type</label>
-                        <div class="selectWrapper">
-                          <select
-                            v-on:change="setCurrentTemplate($event)"
-                            class=""
-                            name=""
-                            placeholder="Please Select"
-                          >
-                            <option
-                              v-for="template in templates"
-                              v-bind:value="template.name"
-                              >{{template.name}}</option
-                            >
-                          </select>
-                        </div>
-
-                        <label for="">Background Image</label>
-                        <div class="selectWrapper">
-                          <select
-                            v-model="background"
-                            class=""
-                            name=""
-                            placeholder=""
-                          >
-                            <optgroup label="ARC">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/about-us/careers/carrers-jumbo2.jpg"
-                                >ARC People 1</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/about-us/careers/jumbotronstandardculture.jpg"
-                                >ARC People 2</option
-                              >
-                            </optgroup>
-                            <optgroup label="Stock People">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/GettyImages-554391989.jpg"
-                                >Collaboration 1</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/GettyImages-687920320.jpg"
-                                >Collaboration 2</option
-                              >
-                              <option
-                                value="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                                >Two Developers (Man and Woman)</option
-                              >
-                              <option
-                                value="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                                >Two Women on Laptop</option
-                              >
-                              <option
-                                value="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                                >Team Meeting w/ Sticky Notes</option
-                              >
-                              <option
-                                value="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                                >Team Coworkers</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel12.jpg"
-                                >Man Drawing on Computer</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel17.jpg"
-                                >Girl with Credit Card</option
-                              >
-                            </optgroup>
-
-                            <optgroup label="GBTA">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/artur-tumasjan-KZSNMN4VxR8-unsplash.jpg"
-                                >Airport</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/becca-tapert-QofjUnxy9LY-unsplash.jpg"
-                                >Girl on Phone</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg"
-                                >Clouds</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/dynamic-wang-fPzTfEauDls-unsplash.jpg"
-                                >Airplane on tarmac</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/fabio-oyXis2kALVg-unsplash.jpg"
-                                >Digital Cubes</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg"
-                                >Computer Typing</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/nasa-Q1p7bh3SHj8-unsplash.jpg"
-                                >Globe digital</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/nina-z-VKg1oXU-vzo-unsplash.jpg"
-                                >Data Lines</option
-                              >
-                            </optgroup>
-
-                            <optgroup label="Airplanes">
-                              <option
-                                v-for="n in 40"
-                                v-bind:value="'https://www2.arccorp.com/globalassets/imageMaker/airplanes/' + n + '.jpg'"
-                                >Airplane Stock {{n}}</option
-                              >
-                            </optgroup>
-
-                            <optgroup label="Technology">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imageMaker/GettyImages-860310256.jpg"
-                                >Computer Typing 1</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imageMaker/GettyImages-864246666.jpg"
-                                >Computer Typing 2</option
-                              >
-                            </optgroup>
-
-                            <optgroup label="Data">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel15.jpg"
-                                >Data Grid</option
-                              >
-                              <option
-                                value="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-                                >Overhead North America</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/products--participation/products/odss/jumbotronstandard_1400x483_odss.jpg"
-                                >Data points connected</option
-                              >
-                            </optgroup>
-
-                            <optgroup label="Products">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/imagemaker/customreports_ad_image_tw.png"
-                                >Custom Reports</option
-                              >
-                            </optgroup>
-
-                            <optgroup label="Misc">
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel14.jpg"
-                                >Overhead Topography</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/slides/carousel16.jpg"
-                                >Mobile Phone</option
-                              >
-                              <option
-                                value="https://images.unsplash.com/photo-1454496406107-dc34337da8d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80"
-                                >Passport</option
-                              >
-                            </optgroup>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <a
-                      href="#"
-                      class="toggleAdvanced"
-                      v-on:click="toggleAdvanced()"
-                    >
-                      View Advanced Options
-                      <i v-show="!viewAdvanced" class="fas fa-caret-down"></i>
-                      <i v-show="viewAdvanced" class="fas fa-caret-up"></i>
-                    </a>
-
-                    <div class="advancedTemplateOptions" v-show="viewAdvanced">
-                      <div class="row no-gutters">
-                        <div class="col-8">
-                          <label for="">Size</label>
-                          <div class="selectWrapper">
-                            <select
-                              v-on:change="setSize($event)"
-                              class=""
-                              name=""
-                              placeholder="Please Select"
-                            >
-                              <option value="1250px by 650px"
-                                >Twitter (1250x650)</option
-                              >
-                              <option value="960px by 720px"
-                                >Facebook (960x720)</option
-                              >
-                              <option value="1024px by 539px"
-                                >LinkedIn (1024x539)</option
-                              >
-                              <option value="1280px by 720px"
-                                >YouTube (1280x720)</option
-                              >
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <label for="">Textbox Width</label>
-                          <div class="selectWrapper">
-                            <select v-model="textboxWidth" class="" name="">
-                              <option value="20%">20%</option>
-                              <option value="25%">25%</option>
-                              <option value="30%">30%</option>
-                              <option value="40%">40%</option>
-                              <option value="50%">50%</option>
-                              <option value="50%">60%</option>
-                              <option value="70%">70%</option>
-                              <option value="75%">75%</option>
-                              <option value="80%">80%</option>
-                              <option value="100%">100%</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row no-gutters">
-                        <div class="col-4">
-                          <label for="">Textbox Color</label>
-                          <div class="selectWrapper">
-                            <select v-model="textboxColor" class="" name="">
-                              <option value="#ffffff">White</option>
-                              <option value="#0C1C47">Dark Blue</option>
-                              <option value="#189bb0">Teal</option>
-                              <option value="#d4d4d4">Gray</option>
-                              <option value="#96BE3C">Green</option>
-                              <option value="#DF7C32">Orange</option>
-                              <option value="#AB035C">Pink</option>
-                              <option value="#6B1C40">Purple</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-3">
-                          <label for="">Opacity</label>
-                          <div class="selectWrapper">
-                            <select v-model="textBoxOpacity" class="" name="">
-                              <option value="1">1</option>
-                              <option value="0.9">0.9</option>
-                              <option value="0.8">0.8</option>
-                              <option value="0.7">0.7</option>
-                              <option value="0.6">0.6</option>
-                              <option value="0.5">0.5</option>
-                              <option value="0.4">0.4</option>
-                              <option value="0.3">0.3</option>
-                              <option value="0.2">0.2</option>
-                              <option value="0.1">0.1</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-5">
-                          <label for="">Position</label>
-                          <div class="selectWrapper">
-                            <select v-model="position" class="" name="">
-                              <option value="middleCenter">Full Screen</option>
-                              <option value="fullscreen">Middle Center</option>
-                              <option value="centerLeft">Center Left</option>
-                              <option value="centerRight">Center Right</option>
-                              <option value="topRight">Top Right</option>
-                              <option value="topLeft">Top Left</option>
-                              <option value="bottomRight">Bottom Right</option>
-                              <option value="bottomLeft">Bottom Left</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row no-gutters">
-                        <div class="col-4">
-                          <label for="">Border Size</label>
-                          <div class="selectWrapper">
-                            <select v-model="borderSize" class="" name="">
-                              <option value="0">None</option>
-                              <option value="4px">4px</option>
-                              <option value="8px">8px</option>
-                              <option value="12px">12px</option>
-                              <option value="16px">16px</option>
-                              <option value="20px">20px</option>
-                              <option value="24px">24px</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <label for="">B. Color</label>
-                          <div class="selectWrapper">
-                            <select v-model="borderColor" class="" name="">
-                              <option value="#ffffff">White</option>
-                              <option value="#0C1C47">Dark Blue</option>
-                              <option value="#189bb0">Teal</option>
-                              <option value="#d4d4d4">Gray</option>
-                              <option value="#96BE3C">Green</option>
-                              <option value="#DF7C32">Orange</option>
-                              <option value="#AB035C">Pink</option>
-                              <option value="#6B1C40">Purple</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <label for="">B. Position</label>
-                          <div class="selectWrapper">
-                            <select v-model="borderPosition" class="" name="">
-                              <option value="top">top</option>
-                              <option value="right">right</option>
-                              <option value="bottom">bottom</option>
-                              <option value="left">left</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row no-gutters">
-                        <div class="col-4">
-                          <label for="">Logo color</label>
-                          <div class="selectWrapper">
-                            <select v-model="logoColor" class="" name="">
-                              <option value="teal">teal</option>
-                              <option value="white">white</option>
-                              <option value="black">black</option>
-                              <option value="gray">gray</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <label for="">Logo Size</label>
-                          <div class="selectWrapper">
-                            <select v-model="logoSize" class="" name="">
-                              <option value="x-small">x-small</option>
-                              <option value="small">small</option>
-                              <option value="medium">medium</option>
-                              <option value="large">large</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <label for="">Logo Position</label>
-                          <div class="selectWrapper">
-                            <select v-model="logoPosition" class="" name="">
-                              <option value="logoHide">Hide</option>
-                              <option value="topRight">Top Right</option>
-                              <option value="topLeft">Top Left</option>
-                              <option value="bottomRight">Bottom Right</option>
-                              <option value="bottomLeft">Bottom Left</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row no-gutters">
-                        <div class="col-md-6">
-                          <label for="">Icon</label>
-                          <div class="selectWrapper">
-                            <select v-model="imageIcon" class="" name="">
-                              <option value="">None</option>
-                              <option
-                                value="https://www2.arccorp.com/globalassets/products--participation/products/aria/matrix_231x170_aria_4.png"
-                                >Calendar</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_3.png"
-                                >Reliable Delivery</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/support--training/fraud-prevention/fraudprevention_matrix4_231x170.png"
-                                >Computer w/ Checkmark</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/products--participation/travel-agencies/become-an-arc-agent/ticket-icon-231x170.png"
-                                >Ticket</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_2.png"
-                                >Custom File</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/products--participation/products/arc-custom-reports/matrix_231x170_customreports_4.png"
-                                >Global</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/securityicon.png"
-                                >Secure</option
-                              >
-                              <option
-                                value="https://www2.arccorp.com/globalassets/homepage/redesign/automated.png"
-                                >Automation</option
-                              >
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label for="">Text Align</label>
-                          <div class="selectWrapper">
-                            <select v-model="textAlign" class="" name="">
-                              <option value="left">Left</option>
-                              <option value="center">Center</option>
-                              <option value="right">Right</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button v-on:click="saveImage()" class="ctaBtn">
-                    Save Image
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col image-column-right">
-              <div class="imageMiddle">
-                <div
-                  class="imageContainer previewImage"
-                  v-bind:style="{ textAlign: textAlign }"
-                >
-                  <div
-                    id="previewImage"
-                    class="imagePost"
-                    v-bind:style="{ 'background': backgroundFormat, 'width': width, 'height': height, 'margin-left': marginLeft, 'margin-right': marginRight, 'margin-top': marginTop, 'margin-bottom': marginBottom, 'zoom': zoom }"
-                  >
-                    <div
-                      class="textBox"
-                      v-bind:class="position"
-                      v-bind:style="[fullscreen()]"
-                    >
-                      <div
-                        v-bind:class="'imageContent '"
-                        v-bind:style="[{'background' : rgba, 'width': textboxWidth}, borderFormat, {'max-width': width, 'max-height': height}]"
-                      >
-                        <div v-if="imageIcon != ''" class="imageIcon">
-                          <img v-bind:src="imageIcon" />
-                        </div>
-                        <div class="imageContentInner">
-                          <div
-                            v-for="textItem in text"
-                            v-bind:style="{'color' : textItem.color, 'font-size': textItem.size, 'font-family': textItem.class}"
-                            v-html="textItem.copy"
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      v-bind:class="'arcLogo ' + logoColor + ' ' + logoPosition + ' ' + logoSize"
-                    ></div>
-                  </div>
-                </div>
-
-                <div
-                  class="imageContainer"
-                  v-bind:style="{ textAlign: textAlign }"
-                >
-                  <div
-                    id="myImage"
-                    class="imagePost"
-                    v-bind:style="{ 'background': backgroundFormat, 'width': width, 'height': height, 'margin-left': marginLeft, 'margin-right': marginRight, 'margin-top': marginTop, 'margin-bottom': marginBottom }"
-                  >
-                    <div
-                      class="textBox"
-                      v-bind:class="position"
-                      v-bind:style="[fullscreen()]"
-                    >
-                      <div
-                        v-bind:class="'imageContent '"
-                        v-bind:style="[{'background' : rgba, 'width': textboxWidth}, borderFormat, {'max-width': width, 'max-height': height}]"
-                      >
-                        <div v-if="imageIcon != ''" class="imageIcon">
-                          <img v-bind:src="imageIcon" />
-                        </div>
-                        <div class="imageContentInner">
-                          <div
-                            v-for="textItem in text"
-                            v-bind:style="{'color' : textItem.color, 'font-size': textItem.size, 'font-family': textItem.class}"
-                            v-html="textItem.copy"
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div
-                      v-bind:class="'arcLogo ' + logoColor + ' ' + logoPosition + ' ' + logoSize"
-                    ></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="imageMenuContainer">
-                <div class="imageMenu imageMenuRight">
-                  <ul class="nav nav-pills">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                  </ul>
-
-                  <div class="inputContainer" v-for="(textItem, index) in text">
-                    <label for="">Text {{index + 1}}</label>
-                    <textarea
-                      v-model="textItem.copy"
-                      type="text"
-                      name=""
-                      value=""
-                      cols="40"
-                      rows="3"
-                    ></textarea>
-
-                    <div class="form-group">
-                      <label class="text-label" for="exampleFormControlSelect1"
-                        >Font</label
-                      >
-                      <select
-                        v-model="textItem.class"
-                        class="form-control form-control-sm"
-                        id="exampleFormControlSelect1"
-                      >
-                        <option
-                          value="Source Sans Pro Black, SourceSansPro-Black, arial, sans-serif"
-                          >Bold</option
-                        >
-                        <option
-                          value="Source Sans Pro Regular, SourceSansPro-Regular, arial, sans-serif"
-                          >Regular</option
-                        >
-                        <option
-                          value="Source Sans Pro Light, SourceSansPro-Light, arial, sans-serif"
-                          >Light</option
-                        >
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <label class="text-label" for="exampleFormControlSelect2"
-                        >Color</label
-                      >
-                      <select
-                        v-model="textItem.color"
-                        class="form-control form-control-sm"
-                        id="exampleFormControlSelect2"
-                      >
-                        <option value="#ffffff">White</option>
-                        <option value="#0C1C47">Dark Blue</option>
-                        <option value="#189bb0">Teal</option>
-                        <option value="#d4d4d4">Gray</option>
-                        <option value="#96BE3C">Green</option>
-                        <option value="#DF7C32">Orange</option>
-                        <option value="#AB035C">Pink</option>
-                        <option value="#6B1C40">Purple</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <label class="text-label" for="exampleFormControlSelect3"
-                        >Font Size</label
-                      >
-                      <select
-                        v-model="textItem.size"
-                        class="form-control form-control-sm"
-                        id="exampleFormControlSelect3"
-                      >
-                        <option value="72px">72px</option>
-                        <option value="60px">60px</option>
-                        <option value="48px">48px</option>
-                        <option value="36px">36px</option>
-                        <option value="32px">32px</option>
-                        <option value="28px">28px</option>
-                        <option value="26px">26px</option>
-                        <option value="24px">24px</option>
-                        <option value="22px">22px</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <!-- refunds page START -->
+        <div id="app">
+          <div class="loading">
+            <div class="loading-icon">
+              <i class="fas fa-circle-notch fa-spin"></i>
             </div>
           </div>
         </div>
-        <!-- Image Maker End -->
+        <!-- refunds page END -->
       </div>
       <div class="data-panel__inside">
         <div class="foreground foreground--left valign--middle">
@@ -2060,98 +1270,107 @@
       </div>
     </section>
 
-    <footer>
-      <div class="border-image"></div>
-      <div class="footer-inside">
+    <div>
+      <div id="arc-footer"></div>
+      <div>
         <div class="rtf">
-          <p>
-            <span
-              >© 2018 Airlines Reporting Corporation (ARC). All rights
-              reserved.</span
-            >
-          </p>
+          <noscript>
+            &lt;img height="1" width="1" style="display:none;" alt=""
+            src="https://secure-web.cisco.com/1lFIqAtewp9_1BLUnV0GC98_Dk17wziT5RY3nBb8ZXxTeDBINBdDwEpMrgda9AlaE4ynN8wwEGDc8xENujrxKH6c46BuYWUkWtrxBOZp96AYq8vSkmcjVU9rB4h6xZCtjcFWmJwlnWvVorXMe5D0hCBV6eCxDfpt5Syb2yPI6WozRP4eESeFUnG18ovf8C-Et-677xqxaI6b5EfgxOnxlc_yCKvwsz6FI2urXjO3vKbIbppx02UEzS8PcAgPbkcMA2zZBPQoHGHC6iFlNll5ng4aUnNCeBpFEZPiJBFdkYDrilPOFxEnv2jsDQauqxP2VBLd0EeQ5bOFJ9N-Boqc5hw/https%3A%2F%2Fdc.ads.linkedin.com/collect/?pid=80871&amp;fmt=gif"
+            /&gt;
+          </noscript>
+          <div style="display: none;">
+            <style>
+              <!--
+              .jumbotron.jumbotron--image{
+                width: 100% !important;
+              }
+              .containerApplication .row {
+                display: block;
+              }
+              @media screen and (min-width: 768px){
+              footer .footer-inside {
+                  max-width: 1265px;
+              }
+              }
+              @font-face{font-family:'icomoon';src:url("https://www2.arccorp.com/globalassets/style/fonts/icomoon.eot?3p9rfk");src:url("https://www2.arccorp.com/globalassets/style/fonts/icomoon.eot?3p9rfk#iefix") format("embedded-opentype"), url("https://www2.arccorp.com/globalassets/style/fonts/icomoon.ttf?3p9rfk") format("truetype"), url("https://www2.arccorp.com/globalassets/style/fonts/icomoon.woff?3p9rfk") format("woff"), url("https://www2.arccorp.com/globalassets/style/fonts/icomoon.svg?3p9rfk#icomoon") format("svg");font-weight:normal;font-style:normal;}
+              [class^="icon-"], [class*=" icon-"]{font-family:'icomoon' !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;outline:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+              -->
+            </style>
+          </div>
+          <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/gh/AirlinesReportingCorporation/arccorp@v0.839/dist/main.min.js"
+          ></script>
 
-          <span class="footer-rtf-links">
-            <a href="/website-terms-of-use/" title="Terms">Terms</a>
+          <!-- script -->
+          <script src="https://arccorp-script-test.netlify.app/main-react.min.js"></script>
+          <script src="https://arccorp-script-test.netlify.app/footer-react.min.js"></script>
 
-            <a href="/site-privacy-policy/" title="Privacy">Privacy</a>
-
-            <a href="/pci-data-security-standards/" title="PCI Standards"
-              >PCI Standards</a
-            >
-
-            <a
-              href="https://arccorp.statusdashboard.com/"
-              title="Status"
-              target="_blank"
-              >Status</a
-            >
-          </span>
         </div>
 
-        <ul class="footer-links-social">
-          <li>
-            <a
-              href="https://www.schellmanco.com/certificate-directory"
-              class="icon-iso_logo"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/ARCtalk"
-              title="twitter"
-              target="_blank"
-              class="icon-twitter"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/ARCtalk"
-              title="facebook"
-              target="_blank"
-              class="icon-facebook"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/company/arc"
-              title="LinkedIn"
-              target="_blank"
-              class="icon-linkedin"
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/arctalk/"
-              target="_blank"
-              class="icon-instagram"
-            ></a>
-          </li>
-        </ul>
       </div>
-    </footer>
+    </div>
 
-    <script
-      src="https://www.sc.pages02.net/lp/static/js/iMAWebCookie.js?5bff7538-15339576982-3f3d5eceea4051b7c82d96ba93c1b04e&h=www.pages02.net"
-      type="text/javascript"
-    ></script>
+    <script src="https://www2.arccorp.com/globalassets/static/scripts.js?1235452123d2"></script>
+    <script src="https://www2.arccorp.com/static/js/foundation-custom.js"></script>
+    <script src="https://www2.arccorp.com/globalassets/static/app.js?462233"></script>
+    <script src="arc-airportis.min.js"></script>
 
-    <script src="https://www2.arccorp.com/js-Static/scripts/Tealeaf/eluminate.js"></script>
-    <script async defer src="https://www.google.com/recaptcha/api.js"></script>
-    <script type="text/javascript">
-      cmSetClientID(
-        "52790000|arccorp.com",
-        true,
-        "data.coremetrics.com",
-        "arccorp.com"
-      );
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P4F2JRN"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script>
+      //The below script is for Siteimprove's Analytics tool collects statistics about the users on your website and how they use your website.
+      /*<![CDATA[*/
+      (function() {
+        var sz = document.createElement("script");
+        sz.type = "text/javascript";
+        sz.async = true;
+        sz.src = "//siteimproveanalytics.com/js/siteanalyze_6054592.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(sz, s);
+      })();
+      /*]]>*/
     </script>
 
-    <script src="https://www2.arccorp.com/globalassets/style/main.min.js?12345622432225ed332334234"></script>
-    <script src="https://www2.arccorp.com/globalassets/static/scripts.js?45432"></script>
-    <script src="https://www2.arccorp.com/static/js/foundation-custom.js"></script>
-    <script src="https://www2.arccorp.com/globalassets/static/app.js?3421"></script>
+    <script type="text/javascript">
+      function cmGetDefaultPageID() {
+        var b = window.location.pathname;
+        var e = b.indexOf("?");
+        if (e != -1) {
+          b = b.substr(0, e);
+        }
+        var d = b.indexOf("#");
+        if (d != -1) {
+          b = b.substr(0, d);
+        }
+        var a = b.indexOf(";");
+        if (a != -1) {
+          b = b.substr(0, a);
+        }
+        var c = b.lastIndexOf("/");
+        if (c == b.length - 1) {
+          b = b + "default";
+        }
+        while (b.indexOf("/") == 0) {
+          b = b.substr(1, b.length);
+        }
+        return b;
+      }
+    </script>
 
-    <script src="imageMaker.min.js"></script>
+    
   </body>
 </html>
+

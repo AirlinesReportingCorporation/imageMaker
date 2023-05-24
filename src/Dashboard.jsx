@@ -57,9 +57,7 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      
-    }
+    this.state = {};
 
     this.state = {
       imageBoxStyle: {
@@ -113,7 +111,7 @@ class Dashboard extends Component {
             padding: "15px",
             textAlign: "center",
           },
-          text: "<img src=\"https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-m-white.png\" class=\"mr-3\" /> Insights",
+          text: '<img src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-m-white.png" class="mr-3" /> Insights',
         },
         {
           style: {
@@ -131,10 +129,26 @@ class Dashboard extends Component {
       imageCategory: "all",
       backgroundImages: {
         topbanners: [
-          { name: "ARC Insights", image: "https://www2.arccorp.com/globalassets/imageMaker/arc-insights-main.jpg" },
-          { name: "General Messaging", image: "https://www2.arccorp.com/globalassets/imageMaker/general-messaging.jpg" },
-          { name: "Message from ET", image: "https://www2.arccorp.com/globalassets/imageMaker/message-from-ET.jpg" },
-          { name: "Message from Lauri", image: "https://www2.arccorp.com/globalassets/imageMaker/message-with-lauri.jpg" },
+          {
+            name: "ARC Insights",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/arc-insights-main.jpg",
+          },
+          {
+            name: "General Messaging",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/general-messaging.jpg",
+          },
+          {
+            name: "Message from ET",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/message-from-ET.jpg",
+          },
+          {
+            name: "Message from Lauri",
+            image:
+              "https://www2.arccorp.com/globalassets/imageMaker/message-with-lauri.jpg",
+          },
         ],
         airplanes: [
           {
@@ -829,8 +843,13 @@ class Dashboard extends Component {
     var t = this;
     var e = event.target.value;
     this.setState({ imageCategory: e });
+    console.log(e);
 
-    var firstItem = this.state.backgroundImages[e][0].image;
+    var firstItem = this.state.backgroundImages["topbanners"][0].image;
+
+    if (e != "all") {
+      firstItem = this.state.backgroundImages[e][0].image;
+    }
 
     var temp = {
       height: t.state.imageBoxStyle.height,
@@ -970,8 +989,6 @@ class Dashboard extends Component {
                                 );
                               })}
                             </Form.Control>
-
-                           
                           </Form.Group>
 
                           <Form inline>
@@ -1206,8 +1223,6 @@ class Dashboard extends Component {
                                   </Form.Control>
                                 </div>
 
-                                
-
                                 <div className="mr-2">
                                   <Form.Label>Padding</Form.Label>
                                   <Form.Control
@@ -1225,7 +1240,6 @@ class Dashboard extends Component {
                               </Form>
                             </div>
                             <hr></hr>
-                            
                           </div>
                         );
                       })}

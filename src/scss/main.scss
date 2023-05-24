@@ -78,6 +78,10 @@ label {
   background: #f3f5f7;
   padding: 15px;
   min-height: 100vh;
+
+  .row {
+    max-width: none !important;
+  }
 }
 
 .dashboardWrapper {

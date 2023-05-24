@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{width: "100%"}}>
         <Provider store={store}>
           <Router>
             <Route path="/" exact component={Dashboard} />
