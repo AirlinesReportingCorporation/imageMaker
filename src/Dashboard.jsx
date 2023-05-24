@@ -1,8 +1,4 @@
 import React, { Component, Fragment, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import { connect } from "react-redux";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -1576,8 +1572,4 @@ function ExportModal(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  loginType: state.loginType,
-});
-
-export default connect(mapStateToProps, null)(Dashboard);
+export default Dashboard;

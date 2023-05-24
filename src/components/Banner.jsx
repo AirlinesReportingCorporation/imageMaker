@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-
-import { connect } from "react-redux";
-import { voteAngular, setLoginType } from "../actions";
 
 import Card from "react-bootstrap/Card";
 
@@ -32,7 +28,6 @@ function setLogoPosition(pos) {
 class Banner extends Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   render() {
@@ -77,14 +72,4 @@ class Banner extends Component {
   }
 }
 
-const mapDispatchToProps = {
-  voteAngular,
-  setLoginType,
-};
-
-const mapStateToProps = (state) => ({
-  angular: state.angular,
-  loginType: state.loginType,
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Banner);
+export default Banner;
